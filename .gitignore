@@ -1,0 +1,21 @@
+# Credentials and generated connection properties
+.env
+.env.*
+!.env.example
+semantic/ontop/*.properties
+!semantic/ontop/*.properties.example
+*.pgpass
+*.pem
+*.key
+
+# Local runtimes, database volumes and inspection intermediates
+.local/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+~$*.docx
+
+# Evaluation evidence and environment snapshots are intentionally versioned.
