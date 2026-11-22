@@ -1,0 +1,55 @@
+{
+  "readonly": {
+    "select_count": 30,
+    "insert": {
+      "blocked": true,
+      "sqlstate": "42501"
+    },
+    "update": {
+      "blocked": true,
+      "sqlstate": "42501"
+    },
+    "delete": {
+      "blocked": true,
+      "sqlstate": "42501"
+    },
+    "ddl": {
+      "blocked": true,
+      "sqlstate": "42501"
+    },
+    "passed": true
+  },
+  "fixtures": {
+    "counts": true,
+    "order_2_total": true,
+    "clients_without_orders": true,
+    "duplicates_preserved": true,
+    "empty_result": true,
+    "nullable_city": true
+  },
+  "inference": {
+    "with_hierarchy": true,
+    "without_hierarchy": false,
+    "passed": true
+  },
+  "catalog": {
+    "original": {
+      "valid": true,
+      "missing_columns": [],
+      "human_review": "pendente_revisao_humana"
+    },
+    "incompativel": {
+      "valid": false,
+      "missing_columns": [
+        "pedido.cod_situacao"
+      ],
+      "human_review": "pendente_revisao_humana"
+    },
+    "corrigida": {
+      "valid": true,
+      "missing_columns": [],
+      "human_review": "pendente_revisao_humana"
+    }
+  },
+  "data_preserved": true
+}

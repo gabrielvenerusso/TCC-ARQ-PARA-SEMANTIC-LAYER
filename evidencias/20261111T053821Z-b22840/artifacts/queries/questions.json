@@ -1,0 +1,220 @@
+[
+  {
+    "id": "QC01",
+    "question": "Quais pedidos estão concluídos?",
+    "kind": "select",
+    "fields": {
+      "id": "integer"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "sparql": "queries/sparql/QC01.rq",
+    "sql_reference": "queries/sql/QC01.sql"
+  },
+  {
+    "id": "QC02",
+    "question": "Quais pedidos estão entre 01/01 e 31/01/2026, inclusive?",
+    "kind": "select",
+    "fields": {
+      "id": "integer",
+      "data": "date"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "sparql": "queries/sparql/QC02.rq",
+    "sql_reference": "queries/sql/QC02.sql"
+  },
+  {
+    "id": "QC03",
+    "question": "Qual cliente está associado a cada pedido concluído?",
+    "kind": "select",
+    "fields": {
+      "id": "integer",
+      "nome": "string"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "cliente"
+    ],
+    "sparql": "queries/sparql/QC03.rq",
+    "sql_reference": "queries/sql/QC03.sql"
+  },
+  {
+    "id": "QC04",
+    "question": "Qual o total de cada pedido concluído?",
+    "kind": "select",
+    "fields": {
+      "id": "integer",
+      "total": "decimal"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "item"
+    ],
+    "sparql": "queries/sparql/QC04.rq",
+    "sql_reference": "queries/sql/QC04.sql"
+  },
+  {
+    "id": "QC05",
+    "question": "Quantos pedidos cada cliente possui, incluindo os sem pedidos?",
+    "kind": "select",
+    "fields": {
+      "id": "integer",
+      "quantidade": "integer"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "sparql": "queries/sparql/QC05.rq",
+    "sql_reference": "queries/sql/QC05.sql"
+  },
+  {
+    "id": "QC06",
+    "question": "Quais clientes não possuem pedidos?",
+    "kind": "select",
+    "fields": {
+      "id": "integer"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados"
+    ],
+    "sparql": "queries/sparql/QC06.rq",
+    "sql_reference": "queries/sql/QC06.sql"
+  },
+  {
+    "id": "QC07",
+    "question": "Quais são os clientes e suas cidades, quando informadas?",
+    "kind": "select",
+    "fields": {
+      "id": "integer",
+      "cidade": "string?"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente"
+    ],
+    "sparql": "queries/sparql/QC07.rq",
+    "sql_reference": "queries/sql/QC07.sql"
+  },
+  {
+    "id": "QC08",
+    "question": "O pedido 2 é recuperado como Pedido por inferência de subclasse?",
+    "kind": "ask",
+    "fields": {},
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "situacao_2"
+    ],
+    "sparql": "queries/sparql/QC08.rq",
+    "sql_reference": "queries/sql/QC08.sql"
+  },
+  {
+    "id": "QC09",
+    "question": "Quais pedidos concluídos ocorreram em 2025? (resultado vazio)",
+    "kind": "select",
+    "fields": {
+      "id": "integer"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "sparql": "queries/sparql/QC09.rq",
+    "sql_reference": "queries/sql/QC09.sql"
+  },
+  {
+    "id": "QC10",
+    "question": "Quais produtos aparecem nos itens do pedido 2, preservando repetições?",
+    "kind": "select",
+    "fields": {
+      "produto": "integer"
+    },
+    "ordered": false,
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "item",
+      "produto"
+    ],
+    "sparql": "queries/sparql/QC10.rq",
+    "sql_reference": "queries/sql/QC10.sql"
+  }
+]

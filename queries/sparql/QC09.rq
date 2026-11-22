@@ -1,0 +1,3 @@
+PREFIX : <https://example.org/tcc/vendas#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?id WHERE { ?p a :PedidoConcluido ; :id ?id ; :dataPedido ?d . FILTER(?d >= "2025-01-01"^^xsd:date && ?d < "2026-01-01"^^xsd:date) }

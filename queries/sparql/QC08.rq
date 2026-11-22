@@ -1,0 +1,3 @@
+PREFIX : <https://example.org/tcc/vendas#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+ASK { <https://example.org/tcc/recurso/pedido/2> a :Pedido . }

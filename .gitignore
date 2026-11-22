@@ -10,6 +10,7 @@ semantic/ontop/*.properties
 
 # Local runtimes, database volumes and inspection intermediates
 .local/
+.runtime/
 .venv/
 __pycache__/
 *.py[cod]

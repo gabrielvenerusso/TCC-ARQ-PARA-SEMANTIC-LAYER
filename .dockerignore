@@ -1,0 +1,7 @@
+.git
+.env
+evidencias
+__pycache__
+.venv
+.runtime
+.local

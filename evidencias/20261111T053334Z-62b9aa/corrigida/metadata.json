@@ -1,0 +1,904 @@
+{
+  "columns": [
+    {
+      "table_name": "cliente",
+      "column_name": "id_cliente",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "cliente",
+      "column_name": "nome",
+      "data_type": "text",
+      "is_nullable": "NO",
+      "numeric_precision": null,
+      "numeric_scale": null
+    },
+    {
+      "table_name": "cliente",
+      "column_name": "cidade",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "numeric_precision": null,
+      "numeric_scale": null
+    },
+    {
+      "table_name": "item_pedido",
+      "column_name": "id_item",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "item_pedido",
+      "column_name": "id_pedido",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "item_pedido",
+      "column_name": "id_produto",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "item_pedido",
+      "column_name": "quantidade",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "item_pedido",
+      "column_name": "valor_unitario",
+      "data_type": "numeric",
+      "is_nullable": "NO",
+      "numeric_precision": 10,
+      "numeric_scale": 2
+    },
+    {
+      "table_name": "pedido",
+      "column_name": "id_pedido",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "pedido",
+      "column_name": "id_cliente",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "pedido",
+      "column_name": "data_pedido",
+      "data_type": "date",
+      "is_nullable": "NO",
+      "numeric_precision": null,
+      "numeric_scale": null
+    },
+    {
+      "table_name": "pedido",
+      "column_name": "situacao_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "produto",
+      "column_name": "id_produto",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "numeric_precision": 32,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "produto",
+      "column_name": "descricao",
+      "data_type": "text",
+      "is_nullable": "NO",
+      "numeric_precision": null,
+      "numeric_scale": null
+    },
+    {
+      "table_name": "produto",
+      "column_name": "categoria",
+      "data_type": "text",
+      "is_nullable": "NO",
+      "numeric_precision": null,
+      "numeric_scale": null
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "cliente",
+      "name": "cliente_pkey",
+      "kind": "p",
+      "definition": "PRIMARY KEY (id_cliente)"
+    },
+    {
+      "table_name": "item_pedido",
+      "name": "item_pedido_id_pedido_fkey",
+      "kind": "f",
+      "definition": "FOREIGN KEY (id_pedido) REFERENCES experimento.pedido(id_pedido)"
+    },
+    {
+      "table_name": "item_pedido",
+      "name": "item_pedido_id_produto_fkey",
+      "kind": "f",
+      "definition": "FOREIGN KEY (id_produto) REFERENCES experimento.produto(id_produto)"
+    },
+    {
+      "table_name": "item_pedido",
+      "name": "item_pedido_pkey",
+      "kind": "p",
+      "definition": "PRIMARY KEY (id_item)"
+    },
+    {
+      "table_name": "item_pedido",
+      "name": "item_pedido_quantidade_check",
+      "kind": "c",
+      "definition": "CHECK ((quantidade > 0))"
+    },
+    {
+      "table_name": "item_pedido",
+      "name": "item_pedido_valor_unitario_check",
+      "kind": "c",
+      "definition": "CHECK ((valor_unitario >= (0)::numeric))"
+    },
+    {
+      "table_name": "pedido",
+      "name": "pedido_cod_situacao_check",
+      "kind": "c",
+      "definition": "CHECK ((situacao_id = ANY (ARRAY[1, 2, 3])))"
+    },
+    {
+      "table_name": "pedido",
+      "name": "pedido_id_cliente_fkey",
+      "kind": "f",
+      "definition": "FOREIGN KEY (id_cliente) REFERENCES experimento.cliente(id_cliente)"
+    },
+    {
+      "table_name": "pedido",
+      "name": "pedido_pkey",
+      "kind": "p",
+      "definition": "PRIMARY KEY (id_pedido)"
+    },
+    {
+      "table_name": "produto",
+      "name": "produto_pkey",
+      "kind": "p",
+      "definition": "PRIMARY KEY (id_produto)"
+    }
+  ],
+  "postgresql": "PostgreSQL 17.11 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit",
+  "data": {
+    "cliente": [
+      {
+        "id_cliente": 1,
+        "nome": "Cliente 01",
+        "cidade": "Joinville"
+      },
+      {
+        "id_cliente": 2,
+        "nome": "Cliente 02",
+        "cidade": "Blumenau"
+      },
+      {
+        "id_cliente": 3,
+        "nome": "Cliente 03",
+        "cidade": null
+      },
+      {
+        "id_cliente": 4,
+        "nome": "Cliente 04",
+        "cidade": "Curitiba"
+      },
+      {
+        "id_cliente": 5,
+        "nome": "Cliente 05",
+        "cidade": "Joinville"
+      },
+      {
+        "id_cliente": 6,
+        "nome": "Cliente 06",
+        "cidade": "Florianópolis"
+      },
+      {
+        "id_cliente": 7,
+        "nome": "Cliente 07",
+        "cidade": "Curitiba"
+      },
+      {
+        "id_cliente": 8,
+        "nome": "Cliente 08",
+        "cidade": null
+      },
+      {
+        "id_cliente": 9,
+        "nome": "Cliente 09",
+        "cidade": "Joinville"
+      },
+      {
+        "id_cliente": 10,
+        "nome": "Cliente 10",
+        "cidade": "São Paulo"
+      }
+    ],
+    "produto": [
+      {
+        "id_produto": 1,
+        "descricao": "Produto 01",
+        "categoria": "Material"
+      },
+      {
+        "id_produto": 2,
+        "descricao": "Produto 02",
+        "categoria": "Material"
+      },
+      {
+        "id_produto": 3,
+        "descricao": "Produto 03",
+        "categoria": "Material"
+      },
+      {
+        "id_produto": 4,
+        "descricao": "Produto 04",
+        "categoria": "Material"
+      },
+      {
+        "id_produto": 5,
+        "descricao": "Produto 05",
+        "categoria": "Serviço"
+      },
+      {
+        "id_produto": 6,
+        "descricao": "Produto 06",
+        "categoria": "Serviço"
+      },
+      {
+        "id_produto": 7,
+        "descricao": "Produto 07",
+        "categoria": "Serviço"
+      },
+      {
+        "id_produto": 8,
+        "descricao": "Produto 08",
+        "categoria": "Serviço"
+      },
+      {
+        "id_produto": 9,
+        "descricao": "Produto 09",
+        "categoria": "Serviço"
+      },
+      {
+        "id_produto": 10,
+        "descricao": "Produto 10",
+        "categoria": "Serviço"
+      }
+    ],
+    "pedido": [
+      {
+        "id_pedido": 1,
+        "id_cliente": 1,
+        "data_pedido": "2026-01-01",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 2,
+        "id_cliente": 2,
+        "data_pedido": "2026-01-04",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 3,
+        "id_cliente": 3,
+        "data_pedido": "2026-01-07",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 4,
+        "id_cliente": 4,
+        "data_pedido": "2026-01-10",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 5,
+        "id_cliente": 5,
+        "data_pedido": "2026-01-13",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 6,
+        "id_cliente": 6,
+        "data_pedido": "2026-01-16",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 7,
+        "id_cliente": 7,
+        "data_pedido": "2026-01-19",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 8,
+        "id_cliente": 8,
+        "data_pedido": "2026-01-22",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 9,
+        "id_cliente": 1,
+        "data_pedido": "2026-01-25",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 10,
+        "id_cliente": 2,
+        "data_pedido": "2026-01-28",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 11,
+        "id_cliente": 3,
+        "data_pedido": "2026-01-31",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 12,
+        "id_cliente": 4,
+        "data_pedido": "2026-02-03",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 13,
+        "id_cliente": 5,
+        "data_pedido": "2026-02-06",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 14,
+        "id_cliente": 6,
+        "data_pedido": "2026-02-09",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 15,
+        "id_cliente": 7,
+        "data_pedido": "2026-02-12",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 16,
+        "id_cliente": 8,
+        "data_pedido": "2026-02-15",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 17,
+        "id_cliente": 1,
+        "data_pedido": "2026-02-18",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 18,
+        "id_cliente": 2,
+        "data_pedido": "2026-02-21",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 19,
+        "id_cliente": 3,
+        "data_pedido": "2026-02-24",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 20,
+        "id_cliente": 4,
+        "data_pedido": "2026-02-27",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 21,
+        "id_cliente": 5,
+        "data_pedido": "2026-03-02",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 22,
+        "id_cliente": 6,
+        "data_pedido": "2026-03-05",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 23,
+        "id_cliente": 7,
+        "data_pedido": "2026-03-08",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 24,
+        "id_cliente": 8,
+        "data_pedido": "2026-03-11",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 25,
+        "id_cliente": 1,
+        "data_pedido": "2026-03-14",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 26,
+        "id_cliente": 2,
+        "data_pedido": "2026-03-17",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 27,
+        "id_cliente": 3,
+        "data_pedido": "2026-03-20",
+        "cod_situacao": 3
+      },
+      {
+        "id_pedido": 28,
+        "id_cliente": 4,
+        "data_pedido": "2026-03-23",
+        "cod_situacao": 1
+      },
+      {
+        "id_pedido": 29,
+        "id_cliente": 5,
+        "data_pedido": "2026-03-26",
+        "cod_situacao": 2
+      },
+      {
+        "id_pedido": 30,
+        "id_cliente": 6,
+        "data_pedido": "2026-03-29",
+        "cod_situacao": 3
+      }
+    ],
+    "item_pedido": [
+      {
+        "id_item": 1,
+        "id_pedido": 1,
+        "id_produto": 1,
+        "quantidade": 1,
+        "valor_unitario": "11.11"
+      },
+      {
+        "id_item": 2,
+        "id_pedido": 1,
+        "id_produto": 2,
+        "quantidade": 2,
+        "valor_unitario": "11.21"
+      },
+      {
+        "id_item": 3,
+        "id_pedido": 2,
+        "id_produto": 2,
+        "quantidade": 1,
+        "valor_unitario": "12.11"
+      },
+      {
+        "id_item": 4,
+        "id_pedido": 2,
+        "id_produto": 2,
+        "quantidade": 2,
+        "valor_unitario": "12.21"
+      },
+      {
+        "id_item": 5,
+        "id_pedido": 3,
+        "id_produto": 3,
+        "quantidade": 1,
+        "valor_unitario": "13.11"
+      },
+      {
+        "id_item": 6,
+        "id_pedido": 3,
+        "id_produto": 4,
+        "quantidade": 2,
+        "valor_unitario": "13.21"
+      },
+      {
+        "id_item": 7,
+        "id_pedido": 4,
+        "id_produto": 4,
+        "quantidade": 1,
+        "valor_unitario": "14.11"
+      },
+      {
+        "id_item": 8,
+        "id_pedido": 4,
+        "id_produto": 5,
+        "quantidade": 2,
+        "valor_unitario": "14.21"
+      },
+      {
+        "id_item": 9,
+        "id_pedido": 5,
+        "id_produto": 5,
+        "quantidade": 1,
+        "valor_unitario": "15.11"
+      },
+      {
+        "id_item": 10,
+        "id_pedido": 5,
+        "id_produto": 6,
+        "quantidade": 2,
+        "valor_unitario": "15.21"
+      },
+      {
+        "id_item": 11,
+        "id_pedido": 6,
+        "id_produto": 6,
+        "quantidade": 1,
+        "valor_unitario": "16.11"
+      },
+      {
+        "id_item": 12,
+        "id_pedido": 6,
+        "id_produto": 7,
+        "quantidade": 2,
+        "valor_unitario": "16.21"
+      },
+      {
+        "id_item": 13,
+        "id_pedido": 7,
+        "id_produto": 7,
+        "quantidade": 1,
+        "valor_unitario": "17.11"
+      },
+      {
+        "id_item": 14,
+        "id_pedido": 7,
+        "id_produto": 8,
+        "quantidade": 2,
+        "valor_unitario": "17.21"
+      },
+      {
+        "id_item": 15,
+        "id_pedido": 8,
+        "id_produto": 8,
+        "quantidade": 1,
+        "valor_unitario": "18.11"
+      },
+      {
+        "id_item": 16,
+        "id_pedido": 8,
+        "id_produto": 1,
+        "quantidade": 2,
+        "valor_unitario": "18.21"
+      },
+      {
+        "id_item": 17,
+        "id_pedido": 9,
+        "id_produto": 1,
+        "quantidade": 1,
+        "valor_unitario": "19.11"
+      },
+      {
+        "id_item": 18,
+        "id_pedido": 9,
+        "id_produto": 2,
+        "quantidade": 2,
+        "valor_unitario": "19.21"
+      },
+      {
+        "id_item": 19,
+        "id_pedido": 10,
+        "id_produto": 2,
+        "quantidade": 1,
+        "valor_unitario": "20.11"
+      },
+      {
+        "id_item": 20,
+        "id_pedido": 10,
+        "id_produto": 3,
+        "quantidade": 2,
+        "valor_unitario": "20.21"
+      },
+      {
+        "id_item": 21,
+        "id_pedido": 11,
+        "id_produto": 3,
+        "quantidade": 1,
+        "valor_unitario": "21.11"
+      },
+      {
+        "id_item": 22,
+        "id_pedido": 11,
+        "id_produto": 4,
+        "quantidade": 2,
+        "valor_unitario": "21.21"
+      },
+      {
+        "id_item": 23,
+        "id_pedido": 12,
+        "id_produto": 4,
+        "quantidade": 1,
+        "valor_unitario": "22.11"
+      },
+      {
+        "id_item": 24,
+        "id_pedido": 12,
+        "id_produto": 5,
+        "quantidade": 2,
+        "valor_unitario": "22.21"
+      },
+      {
+        "id_item": 25,
+        "id_pedido": 13,
+        "id_produto": 5,
+        "quantidade": 1,
+        "valor_unitario": "23.11"
+      },
+      {
+        "id_item": 26,
+        "id_pedido": 13,
+        "id_produto": 6,
+        "quantidade": 2,
+        "valor_unitario": "23.21"
+      },
+      {
+        "id_item": 27,
+        "id_pedido": 14,
+        "id_produto": 6,
+        "quantidade": 1,
+        "valor_unitario": "24.11"
+      },
+      {
+        "id_item": 28,
+        "id_pedido": 14,
+        "id_produto": 7,
+        "quantidade": 2,
+        "valor_unitario": "24.21"
+      },
+      {
+        "id_item": 29,
+        "id_pedido": 15,
+        "id_produto": 7,
+        "quantidade": 1,
+        "valor_unitario": "25.11"
+      },
+      {
+        "id_item": 30,
+        "id_pedido": 15,
+        "id_produto": 8,
+        "quantidade": 2,
+        "valor_unitario": "25.21"
+      },
+      {
+        "id_item": 31,
+        "id_pedido": 16,
+        "id_produto": 8,
+        "quantidade": 1,
+        "valor_unitario": "26.11"
+      },
+      {
+        "id_item": 32,
+        "id_pedido": 16,
+        "id_produto": 1,
+        "quantidade": 2,
+        "valor_unitario": "26.21"
+      },
+      {
+        "id_item": 33,
+        "id_pedido": 17,
+        "id_produto": 1,
+        "quantidade": 1,
+        "valor_unitario": "27.11"
+      },
+      {
+        "id_item": 34,
+        "id_pedido": 17,
+        "id_produto": 2,
+        "quantidade": 2,
+        "valor_unitario": "27.21"
+      },
+      {
+        "id_item": 35,
+        "id_pedido": 18,
+        "id_produto": 2,
+        "quantidade": 1,
+        "valor_unitario": "28.11"
+      },
+      {
+        "id_item": 36,
+        "id_pedido": 18,
+        "id_produto": 3,
+        "quantidade": 2,
+        "valor_unitario": "28.21"
+      },
+      {
+        "id_item": 37,
+        "id_pedido": 19,
+        "id_produto": 3,
+        "quantidade": 1,
+        "valor_unitario": "29.11"
+      },
+      {
+        "id_item": 38,
+        "id_pedido": 19,
+        "id_produto": 4,
+        "quantidade": 2,
+        "valor_unitario": "29.21"
+      },
+      {
+        "id_item": 39,
+        "id_pedido": 20,
+        "id_produto": 4,
+        "quantidade": 1,
+        "valor_unitario": "30.11"
+      },
+      {
+        "id_item": 40,
+        "id_pedido": 20,
+        "id_produto": 5,
+        "quantidade": 2,
+        "valor_unitario": "30.21"
+      },
+      {
+        "id_item": 41,
+        "id_pedido": 21,
+        "id_produto": 5,
+        "quantidade": 1,
+        "valor_unitario": "31.11"
+      },
+      {
+        "id_item": 42,
+        "id_pedido": 21,
+        "id_produto": 6,
+        "quantidade": 2,
+        "valor_unitario": "31.21"
+      },
+      {
+        "id_item": 43,
+        "id_pedido": 22,
+        "id_produto": 6,
+        "quantidade": 1,
+        "valor_unitario": "32.11"
+      },
+      {
+        "id_item": 44,
+        "id_pedido": 22,
+        "id_produto": 7,
+        "quantidade": 2,
+        "valor_unitario": "32.21"
+      },
+      {
+        "id_item": 45,
+        "id_pedido": 23,
+        "id_produto": 7,
+        "quantidade": 1,
+        "valor_unitario": "33.11"
+      },
+      {
+        "id_item": 46,
+        "id_pedido": 23,
+        "id_produto": 8,
+        "quantidade": 2,
+        "valor_unitario": "33.21"
+      },
+      {
+        "id_item": 47,
+        "id_pedido": 24,
+        "id_produto": 8,
+        "quantidade": 1,
+        "valor_unitario": "34.11"
+      },
+      {
+        "id_item": 48,
+        "id_pedido": 24,
+        "id_produto": 1,
+        "quantidade": 2,
+        "valor_unitario": "34.21"
+      },
+      {
+        "id_item": 49,
+        "id_pedido": 25,
+        "id_produto": 1,
+        "quantidade": 1,
+        "valor_unitario": "35.11"
+      },
+      {
+        "id_item": 50,
+        "id_pedido": 25,
+        "id_produto": 2,
+        "quantidade": 2,
+        "valor_unitario": "35.21"
+      },
+      {
+        "id_item": 51,
+        "id_pedido": 26,
+        "id_produto": 2,
+        "quantidade": 1,
+        "valor_unitario": "36.11"
+      },
+      {
+        "id_item": 52,
+        "id_pedido": 26,
+        "id_produto": 3,
+        "quantidade": 2,
+        "valor_unitario": "36.21"
+      },
+      {
+        "id_item": 53,
+        "id_pedido": 27,
+        "id_produto": 3,
+        "quantidade": 1,
+        "valor_unitario": "37.11"
+      },
+      {
+        "id_item": 54,
+        "id_pedido": 27,
+        "id_produto": 4,
+        "quantidade": 2,
+        "valor_unitario": "37.21"
+      },
+      {
+        "id_item": 55,
+        "id_pedido": 28,
+        "id_produto": 4,
+        "quantidade": 1,
+        "valor_unitario": "38.11"
+      },
+      {
+        "id_item": 56,
+        "id_pedido": 28,
+        "id_produto": 5,
+        "quantidade": 2,
+        "valor_unitario": "38.21"
+      },
+      {
+        "id_item": 57,
+        "id_pedido": 29,
+        "id_produto": 5,
+        "quantidade": 1,
+        "valor_unitario": "39.11"
+      },
+      {
+        "id_item": 58,
+        "id_pedido": 29,
+        "id_produto": 6,
+        "quantidade": 2,
+        "valor_unitario": "39.21"
+      },
+      {
+        "id_item": 59,
+        "id_pedido": 30,
+        "id_produto": 6,
+        "quantidade": 1,
+        "valor_unitario": "40.11"
+      },
+      {
+        "id_item": 60,
+        "id_pedido": 30,
+        "id_produto": 7,
+        "quantidade": 2,
+        "valor_unitario": "40.21"
+      }
+    ]
+  },
+  "counts": {
+    "cliente": 10,
+    "produto": 10,
+    "pedido": 30,
+    "item_pedido": 60
+  },
+  "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c"
+}
