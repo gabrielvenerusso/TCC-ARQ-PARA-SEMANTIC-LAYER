@@ -1,6 +1,6 @@
 # Arquitetura do MVP
 
-O protótipo instancia a arquitetura do TCC com dados sintéticos e consultas somente leitura.
+O protótipo implementa a arquitetura proposta no TCC usando dados sintéticos de pedidos de venda. As consultas são executadas com acesso somente leitura.
 
 | Componente lógico | Implementação | Responsabilidade |
 |---|---|---|
@@ -31,14 +31,18 @@ O código 2 é interpretado como `PedidoConcluido` pelo mapeamento. A ontologia 
 
 ## Avaliação e comparação
 
-As dez referências SQL são escritas separadamente das consultas SPARQL e dos mapeamentos. São executadas e preservadas antes da mudança. QC04 tem uma verificação adicional independente do valor 36,53 para o pedido 2; QC06 identifica os clientes 9 e 10; QC10 exige duas linhas com produto 2. Essas verificações são automatizadas, não uma revisão humana já realizada.
+As dez consultas SQL de referência são independentes das consultas SPARQL e dos mapeamentos. Seus resultados são salvos antes da alteração do esquema. Algumas questões também verificam casos específicos da base: o total de 36,53 do pedido 2 em QC04, os clientes 9 e 10 em QC06 e as duas ocorrências do produto 2 em QC10.
 
 O contrato especifica tipos e campos. A comparação usa multiconjuntos: ignora ordem e preserva duplicidades. Decimais são exatos; SQL NULL corresponde a variável SPARQL não vinculada, apenas nos campos opcionais. Não existe coerção para zero ou texto vazio. Os identificadores retornados são propriedades inteiras; IRIs usam `https://example.org/tcc/recurso/{entidade}/{id}` e não são convertidas por heurística.
 
 O banco `tcc_demo` serve à demonstração. A avaliação recria somente o esquema `experimento` do banco separado `tcc_avaliacao`, executa a base original, renomeia `cod_situacao` para `situacao_id`, executa com artefatos antigos e repete com mapeamento e catálogo corrigidos. Ontologia, dados e consultas permanecem iguais. O administrador prepara e altera o banco; Ontop e referências SQL usam `tcc_leitor`. O controle negativo ocorre após as 30 tentativas e é registrado separadamente.
 
-Os registros incluem o commit, os artefatos e seus hashes, versões, horário, questão, requisitos, configurações, resultados ou erros. Os metadados de cada etapa incluem colunas, tipos e restrições PK/FK. A SQL interna gerada pelo Ontop não é coletada nesta versão; as SQL em `queries/sql` são referências independentes. Não se afirma proveniência individual de cada célula.
+Cada tentativa registra a questão, a configuração, o resultado ou erro, o horário, o commit e os artefatos utilizados. O manifesto reúne os hashes dos arquivos. Os metadados de cada etapa incluem colunas, tipos e restrições PK/FK. A rastreabilidade é feita por consulta e arquivo; a SQL interna gerada pelo Ontop e a origem de cada célula não são coletadas nesta versão.
 
 ## Limites
 
-Um domínio sintético com 10 clientes, 10 produtos, 30 pedidos e 60 itens não sustenta conclusões sobre escala ou uso empresarial. Tempos são diagnósticos, não benchmark. A revisão humana das definições é registrada como pendente. O catálogo documenta o roteiro e não faz interpretação automática de linguagem natural. As credenciais do Compose são públicas e destinadas exclusivamente à demonstração local; PostgreSQL não publica porta, e a interface é vinculada ao loopback.
+A avaliação usa 10 clientes, 10 produtos, 30 pedidos e 60 itens. Os resultados se limitam a esse conjunto de dados e à alteração de esquema prevista no experimento. Os tempos registrados servem ao diagnóstico da execução.
+
+R01 depende da revisão das responsabilidades e interfaces. A conferência dos termos, métricas e relações do catálogo também está pendente. O catálogo cobre as dez questões do roteiro, sem interpretação de perguntas em linguagem natural.
+
+As credenciais do Compose são públicas e destinadas à demonstração local. O PostgreSQL não publica porta para o host, e a interface do Ontop fica vinculada ao loopback.

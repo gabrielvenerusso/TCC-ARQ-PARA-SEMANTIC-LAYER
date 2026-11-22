@@ -6,7 +6,7 @@
                            "sha256":  "32cd6107f390afe43ae2485479720802506c4e016e7e1151913081c15f5dbd28",
                            "source_git_commit":  "5e7d89ae84476c8db215477ccc9fe7a48178fb42"
                        },
-    "integration":  "Imported source and evidence without the nested .git; original repository ancestry retained. README and ignore rules adapted to this repository.",
+    "integration":  "Código e evidências importados do ZIP, mantendo o histórico deste repositório. O diretório .git do pacote não foi incorporado. README e regras de arquivos ignorados foram ajustados.",
     "preserved_phase0_sha256":  {
                                     "docs/TCC 1 - Gabriel Venerusso.docx":  "682ccfaf6bd4df8b7c68f485a5dfd158c09a61dc4b6d7168a575dad02f77c1ea",
                                     "docs/fase0_ambiente.md":  "fec6fb5c64ee4b2b9d3986ed54100df120519f376e3822dd5683963d72f6d11f",
@@ -26,10 +26,10 @@
                                                              }
                              },
     "preserved_linux_index_sha256":  "1f2e75e44657a1dcc174d6cabdd89ae6bf306b33584eb4a86dcbcba356fa9971",
-    "historical_result_note":  "Linux requirements.json and reports are original evidence, including the previous R01 verdict. Only the integrated evaluator and future runs correct R01 and retain pending catalog review.",
+    "historical_result_note":  "Os relatórios Linux mantêm os resultados da execução original, inclusive a classificação anterior de R01. A correção desse requisito e a pendência de revisão do catálogo estão registradas no avaliador integrado e na rodada Windows.",
     "additional_reference":  {
                                  "filename":  "TCC_1_Gabriel_Venerusso (1).docx",
                                  "sha256":  "c00bff36695c045c787049d6046723872ad6683f73bb68068c3ffcb1059e4c08",
-                                 "action":  "Reference only; did not replace the versioned Phase 0 document. Embedded instructions do not override the current user request."
+                                 "action":  "Documento de referência adicional. O documento versionado na Fase 0 foi mantido."
                              }
 }
