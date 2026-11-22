@@ -45,6 +45,26 @@ estrutural de suas colunas é uma verificação técnica separada da revisão de
 termos, métricas e relações. Um protocolo técnico aprovado não aprova essas
 duas revisões humanas.
 
+## Rodada Docker Compose registrada nesta integração
+
+Em 22/11/2026, a rodada
+[`20261122T213200Z-ed2a2c-windows-compose`](evidencias/20261122T213200Z-ed2a2c-windows-compose/relatorio.html)
+foi concluída pelo PowerShell 5.1 no Windows com Docker Desktop/WSL 2.
+O commit testado foi `c6822333f0ea47905c443763570665e094d4a220`, com árvore
+limpa. Os 15 testes passaram; as 30 tentativas ficaram registradas: 10
+corretas na original, 10 bloqueadas na inicialização da incompatível e 10
+corretas na corrigida. O bloqueio esperado ocorreu porque o mapeamento
+ainda referenciava `cod_situacao` após a renomeação para `situacao_id`.
+
+O protocolo técnico, o controle de inferência, as restrições de escrita e
+a preservação dos dados passaram. Os 130 arquivos referenciados pelos
+manifestos foram verificados sem divergências. R01 e a conferência humana
+do catálogo permanecem pendentes. Consulte o
+[resumo](evidencias/20261122T213200Z-ed2a2c-windows-compose/summary.json),
+[log dos testes](evidencias/20261122T213200Z-ed2a2c-windows-compose/logs/05-tests.stderr.log),
+[etapas e comandos](evidencias/20261122T213200Z-ed2a2c-windows-compose/execution.json) e
+[auditoria de preservação](evidencias/20261122T213200Z-ed2a2c-windows-compose/preservation-audit.json).
+
 ## Reproduzir no Windows
 
 Use Git, PowerShell 5.1 ou superior e Docker Desktop iniciado com WSL 2 e

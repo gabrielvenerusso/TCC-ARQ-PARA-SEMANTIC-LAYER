@@ -1,0 +1,209 @@
+{
+    "run_id":  "20261122T213200Z-ed2a2c-windows-compose",
+    "started_at_utc":  "2026-11-22T21:32:00.3835692+00:00",
+    "ended_at_utc":  "2026-11-22T21:33:32.5243935+00:00",
+    "tested_commit":  "c6822333f0ea47905c443763570665e094d4a220",
+    "git_before_execution":  {
+                                 "commit":  "c6822333f0ea47905c443763570665e094d4a220",
+                                 "dirty":  false,
+                                 "status":  ""
+                             },
+    "host":  {
+                 "os":  "Microsoft Windows NT 10.0.26200.0",
+                 "machine":  "DESKTOP-TD6H71H",
+                 "process_architecture_bits":  64,
+                 "powershell":  "5.1.26100.9818",
+                 "timezone":  "E. South America Standard Time"
+             },
+    "runtime_mode":  "docker-compose-from-windows",
+    "status":  "completed",
+    "exit_code":  0,
+    "failed_phase":  null,
+    "observed_error":  null,
+    "host_fallback_used":  false,
+    "commands":  [
+                     {
+                         "phase":  "docker_version",
+                         "command":  "docker version",
+                         "arguments":  [
+                                           "version"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:00.6631962+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:00.9461557+00:00",
+                         "duration_seconds":  0.283,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/01-docker_version.stdout.log",
+                         "stderr_log":  "logs/01-docker_version.stderr.log"
+                     },
+                     {
+                         "phase":  "compose_version",
+                         "command":  "docker compose version",
+                         "arguments":  [
+                                           "compose",
+                                           "version"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:00.9578109+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:01.1041699+00:00",
+                         "duration_seconds":  0.146,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/02-compose_version.stdout.log",
+                         "stderr_log":  "logs/02-compose_version.stderr.log"
+                     },
+                     {
+                         "phase":  "compose_config",
+                         "command":  "docker compose config --quiet",
+                         "arguments":  [
+                                           "compose",
+                                           "config",
+                                           "--quiet"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:01.1061672+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:01.4276692+00:00",
+                         "duration_seconds":  0.322,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/03-compose_config.stdout.log",
+                         "stderr_log":  "logs/03-compose_config.stderr.log"
+                     },
+                     {
+                         "phase":  "build",
+                         "command":  "docker compose --profile avaliacao build avaliador",
+                         "arguments":  [
+                                           "compose",
+                                           "--profile",
+                                           "avaliacao",
+                                           "build",
+                                           "avaliador"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:01.4296746+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:10.9470501+00:00",
+                         "duration_seconds":  9.517,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/04-build.stdout.log",
+                         "stderr_log":  "logs/04-build.stderr.log"
+                     },
+                     {
+                         "phase":  "tests",
+                         "command":  "docker compose run --rm --no-deps --entrypoint python avaliador -m unittest discover -s tests -v",
+                         "arguments":  [
+                                           "compose",
+                                           "run",
+                                           "--rm",
+                                           "--no-deps",
+                                           "--entrypoint",
+                                           "python",
+                                           "avaliador",
+                                           "-m",
+                                           "unittest",
+                                           "discover",
+                                           "-s",
+                                           "tests",
+                                           "-v"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:10.9496371+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:19.1680256+00:00",
+                         "duration_seconds":  8.218,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/05-tests.stdout.log",
+                         "stderr_log":  "logs/05-tests.stderr.log"
+                     },
+                     {
+                         "phase":  "postgres_startup",
+                         "command":  "docker compose up -d --wait postgres",
+                         "arguments":  [
+                                           "compose",
+                                           "up",
+                                           "-d",
+                                           "--wait",
+                                           "postgres"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:19.1916194+00:00",
+                         "ended_at_utc":  "2026-11-22T21:32:57.7141405+00:00",
+                         "duration_seconds":  38.523,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/06-postgres_startup.stdout.log",
+                         "stderr_log":  "logs/06-postgres_startup.stderr.log"
+                     },
+                     {
+                         "phase":  "evaluate",
+                         "command":  "docker compose run --rm --no-deps -e EVIDENCE_RUN_ID=20261122T213200Z-ed2a2c-windows-compose -e EVIDENCE_LATEST_FILE=latest-windows.json avaliador",
+                         "arguments":  [
+                                           "compose",
+                                           "run",
+                                           "--rm",
+                                           "--no-deps",
+                                           "-e",
+                                           "EVIDENCE_RUN_ID=20261122T213200Z-ed2a2c-windows-compose",
+                                           "-e",
+                                           "EVIDENCE_LATEST_FILE=latest-windows.json",
+                                           "avaliador"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:32:57.7162297+00:00",
+                         "ended_at_utc":  "2026-11-22T21:33:31.9556570+00:00",
+                         "duration_seconds":  34.239,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/07-evaluate.stdout.log",
+                         "stderr_log":  "logs/07-evaluate.stderr.log"
+                     },
+                     {
+                         "phase":  "postgres_logs",
+                         "command":  "docker compose logs --no-color --timestamps postgres",
+                         "arguments":  [
+                                           "compose",
+                                           "logs",
+                                           "--no-color",
+                                           "--timestamps",
+                                           "postgres"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:33:32.0053399+00:00",
+                         "ended_at_utc":  "2026-11-22T21:33:32.1957829+00:00",
+                         "duration_seconds":  0.19,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/08-postgres_logs.stdout.log",
+                         "stderr_log":  "logs/08-postgres_logs.stderr.log"
+                     },
+                     {
+                         "phase":  "configured_images",
+                         "command":  "docker compose config --images",
+                         "arguments":  [
+                                           "compose",
+                                           "config",
+                                           "--images"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:33:32.1978527+00:00",
+                         "ended_at_utc":  "2026-11-22T21:33:32.3335715+00:00",
+                         "duration_seconds":  0.136,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/09-configured_images.stdout.log",
+                         "stderr_log":  "logs/09-configured_images.stderr.log"
+                     },
+                     {
+                         "phase":  "image_provenance",
+                         "command":  "docker image inspect --format {\"Id\":{{json .Id}},\"RepoTags\":{{json .RepoTags}},\"RepoDigests\":{{json .RepoDigests}},\"Created\":{{json .Created}},\"Architecture\":{{json .Architecture}},\"Os\":{{json .Os}}} postgres:17.11-bookworm@sha256:665dc7b37ac52a17e298511414c21d23ffa4e6a6ef6225b3e5d59c7afb35e994 tcc-semantic-layer:local",
+                         "arguments":  [
+                                           "image",
+                                           "inspect",
+                                           "--format",
+                                           "{\"Id\":{{json .Id}},\"RepoTags\":{{json .RepoTags}},\"RepoDigests\":{{json .RepoDigests}},\"Created\":{{json .Created}},\"Architecture\":{{json .Architecture}},\"Os\":{{json .Os}}}",
+                                           "postgres:17.11-bookworm@sha256:665dc7b37ac52a17e298511414c21d23ffa4e6a6ef6225b3e5d59c7afb35e994",
+                                           "tcc-semantic-layer:local"
+                                       ],
+                         "executable":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                         "started_at_utc":  "2026-11-22T21:33:32.3537532+00:00",
+                         "ended_at_utc":  "2026-11-22T21:33:32.4728112+00:00",
+                         "duration_seconds":  0.119,
+                         "exit_code":  0,
+                         "stdout_log":  "logs/10-image_provenance.stdout.log",
+                         "stderr_log":  "logs/10-image_provenance.stderr.log"
+                     }
+                 ],
+    "note":  "Docker/PostgreSQL services are left running. No automatic commit or cleanup was performed."
+}

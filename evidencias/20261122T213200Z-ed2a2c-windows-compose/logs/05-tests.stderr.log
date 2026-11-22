@@ -1,0 +1,26 @@
+ Network tcc-semantic-layer_default Creating 
+ Network tcc-semantic-layer_default Created 
+ Volume tcc-semantic-layer_pgdata Creating 
+ Volume tcc-semantic-layer_pgdata Created 
+ Container tcc-semantic-layer-avaliador-run-7d79b2369cb8 Creating 
+ Container tcc-semantic-layer-avaliador-run-7d79b2369cb8 Created 
+test_ask_rejects_string_false (test_comparison.ComparisonTests.test_ask_rejects_string_false) ... ok
+test_bag_ignores_order_and_ordered_comparison_does_not (test_comparison.ComparisonTests.test_bag_ignores_order_and_ordered_comparison_does_not) ... ok
+test_decimal_no_binary_float_rounding (test_comparison.ComparisonTests.test_decimal_no_binary_float_rounding) ... ok
+test_duplicate_loss_fails (test_comparison.ComparisonTests.test_duplicate_loss_fails) ... ok
+test_optional_is_not_empty_or_zero (test_comparison.ComparisonTests.test_optional_is_not_empty_or_zero) ... ok
+test_reject_wrong_literal_type (test_comparison.ComparisonTests.test_reject_wrong_literal_type) ... ok
+test_unbound_required_rejected (test_comparison.ComparisonTests.test_unbound_required_rejected) ... ok
+test_bootstrap_failure_preserves_all_planned_attempts_and_clean_commit (test_evaluation.BlockedEvaluationTests.test_bootstrap_failure_preserves_all_planned_attempts_and_clean_commit) ... ok
+test_existing_run_is_not_overwritten (test_evaluation.BlockedEvaluationTests.test_existing_run_is_not_overwritten) ... ok
+test_invalid_latest_filename_fails_before_creating_evidence (test_evaluation.BlockedEvaluationTests.test_invalid_latest_filename_fails_before_creating_evidence) ... ok
+test_run_id_cannot_escape_evidence_root (test_evaluation.BlockedEvaluationTests.test_run_id_cannot_escape_evidence_root) ... ok
+test_supplemental_manifest_checks_host_logs_and_original_manifest (test_evaluation.EvidenceVerificationTests.test_supplemental_manifest_checks_host_logs_and_original_manifest) ... ok
+test_catalog_checks_preserve_pending_human_review (test_evaluation.RequirementReviewTests.test_catalog_checks_preserve_pending_human_review) ... ok
+test_invalid_catalog_is_visible_while_review_remains_pending (test_evaluation.RequirementReviewTests.test_invalid_catalog_is_visible_while_review_remains_pending) ... ok
+test_successful_technical_checks_do_not_approve_human_reviews (test_evaluation.RequirementReviewTests.test_successful_technical_checks_do_not_approve_human_reviews) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.058s
+
+OK

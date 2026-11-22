@@ -1,0 +1,16 @@
+{
+  "change": "pedido.cod_situacao → pedido.situacao_id",
+  "logical_files_updated": 2,
+  "files": [
+    "mappings/original.ttl → mappings/corrigido.ttl",
+    "catalog/original.json → catalog/corrigido.json"
+  ],
+  "mapping_rules_changed": [
+    "urn:tcc:mapping:situacao_1",
+    "urn:tcc:mapping:situacao_2",
+    "urn:tcc:mapping:situacao_3"
+  ],
+  "ontology_changed": false,
+  "sparql_queries_changed": false,
+  "note": "As versões antiga e nova são preservadas em arquivos distintos; atualização manual."
+}

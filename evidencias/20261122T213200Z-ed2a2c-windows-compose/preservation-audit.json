@@ -1,0 +1,1117 @@
+{
+    "timestamp_utc":  "2026-11-22T21:33:17.5291748Z",
+    "repository":  "gabrielvenerusso/TCC-ARQ-PARA-SEMANTIC-LAYER",
+    "commit":  "c6822333f0ea47905c443763570665e094d4a220",
+    "branch":  "codex/integrar-mvp-zip",
+    "base_commit":  "b77f537e1057589d8007985b281dd13a19f04b7c",
+    "integration_metadata":  "docs/integracao_mvp.json",
+    "integration_metadata_sha256":  "6c9d5cfc83ac9b0aff21f6d5a13c8368851b0fff1b7e5a00a80556047cbfded4",
+    "source_archive":  {
+                           "filename":  "MVP_Semantic_Layer_Gabriel.zip",
+                           "sha256":  "32cd6107f390afe43ae2485479720802506c4e016e7e1151913081c15f5dbd28",
+                           "valid":  true
+                       },
+    "additional_reference":  {
+                                 "filename":  "TCC_1_Gabriel_Venerusso (1).docx",
+                                 "sha256":  "c00bff36695c045c787049d6046723872ad6683f73bb68068c3ffcb1059e4c08",
+                                 "valid":  true
+                             },
+    "original_evidence":  {
+                              "files_compared":  200,
+                              "valid":  true,
+                              "files":  [
+                                            {
+                                                "path":  ".gitkeep",
+                                                "sha256":  "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "latest.json",
+                                                "sha256":  "1f2e75e44657a1dcc174d6cabdd89ae6bf306b33584eb4a86dcbcba356fa9971",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/checks.json",
+                                                "sha256":  "1be76f3330b3b7802e479a4b1cfe4e421e2e07c443597b2725bd887f7eff0fec",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/environment.json",
+                                                "sha256":  "0279f2a882dcdbe116d425131118abc02214dfa9c581e5e5984be0f99c4f891e",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/manifest.json",
+                                                "sha256":  "e6a451a4b287ca34905604143c975ff477a35cd93780e8dc2e397d5f9cfe7893",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/mutation.json",
+                                                "sha256":  "6ece5b7f6b5adfb511041a1181ee4bd0c547a20b6f4417c1aeefff967084f35d",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/records.json",
+                                                "sha256":  "eac1477f3495c1f0490d9ed8ab4899ed2dac91b97a77d6d5856cdd94a44020f1",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/relatorio.html",
+                                                "sha256":  "10b58f2dd49fac3ef14e616d67382e2132d18d87892e1949193c57fb60197734",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/requirements.json",
+                                                "sha256":  "e611936d4f91e41096c38a8a8fa5f61b9294b9cc1c11b622d9a500757a99d85c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/summary.json",
+                                                "sha256":  "fb3fc3364ecc13187db709a1acf588505c2d62c0a517aafc762633c6f352b29e",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/catalog/corrigido.json",
+                                                "sha256":  "5b1ea9be44d5e37a23e04e752ddf7fd2ad2cc18c1a0196ae7aaffe598e29ccc4",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/catalog/original.json",
+                                                "sha256":  "760b3e33f557cfad9af82e174867a1829eff2e1e9c1de8018f807c220f5a36db",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/docs/ARQUITETURA.md",
+                                                "sha256":  "9aa621b46bbc2c390af7ed63a455ba04c86aa5274aa8f5c900f46eba7481b102",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/docs/requirements.json",
+                                                "sha256":  "8b1a924a1021b7115db38430b31837194fc20e2a4e75a0b5462321b9384800a3",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/mappings/corrigido.ttl",
+                                                "sha256":  "3ba2bd78bd3293c555c81af138c84b410504b1f0e8753bde31135e4883cc08d0",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/mappings/original.ttl",
+                                                "sha256":  "b8172b509fbd1b8ae495118aa6786ca380c1e90473be98e5a5a0122434104a90",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/ontology/sem_hierarquia.ttl",
+                                                "sha256":  "07ff49876cfdad6284c848724b718501488053d718c5b0d8b23a4818f6c6f149",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/ontology/vendas.ttl",
+                                                "sha256":  "b3473342fa72452bebc8634cc300000c9f695927754828d7fb9995cbe38a76ef",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/questions.json",
+                                                "sha256":  "0d7281330e1bc067589a0ead7c71af6bbbde3ceb101a79069f935e07b7f1d180",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC01.rq",
+                                                "sha256":  "5d3463934dc0e14240c34db096ec1303e3d1da6704eab69d4943319158826c86",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC02.rq",
+                                                "sha256":  "bfa61a855c304c6b6a390c1b1dd0b960ea965c911c86846065aa734fc30090ff",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC03.rq",
+                                                "sha256":  "8c01e9a200897fa7cffa550272a148d0380d463d3b94a075793d6b48452f90db",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC04.rq",
+                                                "sha256":  "54264124a7c30867b28542a5314ded2cb847915d1948b728584a5b065020779b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC05.rq",
+                                                "sha256":  "18356435921b0fcc30cecca95ce93fa3924e54e63f69806cf2e13e252f8d6637",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC06.rq",
+                                                "sha256":  "e7546af59c507ab49ef469bd6ff993766f0cb1e523e91153f39f3594d28ef2d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC07.rq",
+                                                "sha256":  "03d5ae0ebdac106784016d767d0ef4c6c1cdaa360342fb199fc116fe83817e23",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC08.rq",
+                                                "sha256":  "234b8c50f3d1937d5d044ffe9ce84ade4435fdd34da48a2d82c77f1d0d994a2a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC09.rq",
+                                                "sha256":  "181244d40222ee520ed8cb2ce62f86644ca49dbe3b846e7e2d4c2f952c8aea8c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sparql/QC10.rq",
+                                                "sha256":  "a02d6caece4212785d6ab6870dde61cf3efdb1408244e8b7cd0086f5a9fdedf3",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC01.sql",
+                                                "sha256":  "7bd29cd9ca3e40c23ed72c2730c6be79d629ca8ba256669914d8653948271b48",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC02.sql",
+                                                "sha256":  "65b0445560aa5898632eea38efda8157150c3bd490591398672b1ee1b3fd3700",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC03.sql",
+                                                "sha256":  "b6707b1582716f09d6c6ad4b8cff047be3f0929e665bc55fe4475e1604731e00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC04.sql",
+                                                "sha256":  "3dd630402f3ef45b055715f651370ac9172fd25bdb822a1545b35e91bb0301f0",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC05.sql",
+                                                "sha256":  "6d803dfb9d0de7788a58a00f5ce99902025d928526ebf719570908c5f886e7f5",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC06.sql",
+                                                "sha256":  "6ce1eeaee253405eeaf6f39f9e560d17ff7be02af32091a50c836bef948346ea",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC07.sql",
+                                                "sha256":  "d4b57bcee295b0814be299db2136e0f4906b8d2f16bc746eb6e315b2c9e3d084",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC08.sql",
+                                                "sha256":  "f9e55f31c2595290abfe062c1aa255d27717b9e4b1982f13550194f6a760ae4c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC09.sql",
+                                                "sha256":  "18fc6faee736a203d0e3eaa0a0ae5fd8b790542e76ad0dd7c2822d3bdf979005",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/queries/sql/QC10.sql",
+                                                "sha256":  "e03786cd67b34189f64ed951063763c49255ec6bf61435a1ed45ea33e35c9bfa",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/sql/mutate.sql",
+                                                "sha256":  "05e5d6bef647d392e18e02e1214ffbb6b7c08a4ab1c706df8545edae087fd299",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/sql/schema.sql",
+                                                "sha256":  "c93f67f92db9acb03e1acf814b2d184ca803e5c0f56c01d61ad646d66366ab6a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/artifacts/sql/seed.sql",
+                                                "sha256":  "64bd6803eb7a8907af880a67689ec8afcaf1b78b48fc312ef81c9fdde773a38a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/metadata.json",
+                                                "sha256":  "618a03308ab67e0c86073b0bad84e939ecb5a1ab73ac99c913a3e074498e9f7a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC01.normalized.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC01.raw.json",
+                                                "sha256":  "48e7c3a8350c2e44aad4e315abef2f1a85140962fd51db9c4eb80c31944c493b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC02.normalized.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC02.raw.json",
+                                                "sha256":  "d1a89dc5c43befb65815412ad19a1a56106bf7610d867aa21caa84dd0899dfe9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC03.normalized.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC03.raw.json",
+                                                "sha256":  "7b7def877b0132cc457403ebd0828710921c4b69141d5729353065cee82aa5b2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC04.normalized.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC04.raw.json",
+                                                "sha256":  "ca1baa802c11ca15760994a0046b3b1a0103d495645fdff8746cbef832c04ec2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC05.normalized.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC05.raw.json",
+                                                "sha256":  "9f910fc1314107422b1d1435133c002ee0097b55f2af1ea5812a82c5f2f09ef4",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC06.normalized.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC06.raw.json",
+                                                "sha256":  "e2e6564d910671bdd7aaa1289514abaa8ca74e498195ab4994ddd4defea29ce2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC07.normalized.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC07.raw.json",
+                                                "sha256":  "613022c71d8772f20b8df7b3543955013950a3beea3afa432092461e95fcc140",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC08.normalized.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC08.raw.json",
+                                                "sha256":  "02b032ccdd1a085073ec9e51ad18e99517fbe37fa5da5eadcbbffa1bb3707bb9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC09.normalized.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC09.raw.json",
+                                                "sha256":  "96796f4bd2dc24c892be4ff2122df200e2a736196614e8464e4a141539bbbf5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC10.normalized.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/QC10.raw.json",
+                                                "sha256":  "d08f677fd3b4c5e0fb1356d3d7104ac3d6053c5a04361477982efcdf804aaa5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/corrigida/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC01.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC02.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC03.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC04.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC05.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC06.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC07.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC08.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC09.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/expected/QC10.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/incompativel/metadata.json",
+                                                "sha256":  "618a03308ab67e0c86073b0bad84e939ecb5a1ab73ac99c913a3e074498e9f7a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/incompativel/startup.log",
+                                                "sha256":  "99c72a213816ce4e27410b62535a558c6b3587ce8d8e1494a895ed736a31f59c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/negative_control/QC08.raw.json",
+                                                "sha256":  "520e65d6dc2e7f77f5019b3fb693e7568666c904eb601539f82289b28445243d",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/negative_control/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/metadata.json",
+                                                "sha256":  "75f5bc342e7e6ee056289c277f7c346719eeeaec54b9ef8891946d82c6bda4f9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC01.normalized.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC01.raw.json",
+                                                "sha256":  "48e7c3a8350c2e44aad4e315abef2f1a85140962fd51db9c4eb80c31944c493b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC02.normalized.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC02.raw.json",
+                                                "sha256":  "d1a89dc5c43befb65815412ad19a1a56106bf7610d867aa21caa84dd0899dfe9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC03.normalized.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC03.raw.json",
+                                                "sha256":  "7b7def877b0132cc457403ebd0828710921c4b69141d5729353065cee82aa5b2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC04.normalized.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC04.raw.json",
+                                                "sha256":  "ca1baa802c11ca15760994a0046b3b1a0103d495645fdff8746cbef832c04ec2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC05.normalized.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC05.raw.json",
+                                                "sha256":  "9f910fc1314107422b1d1435133c002ee0097b55f2af1ea5812a82c5f2f09ef4",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC06.normalized.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC06.raw.json",
+                                                "sha256":  "e2e6564d910671bdd7aaa1289514abaa8ca74e498195ab4994ddd4defea29ce2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC07.normalized.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC07.raw.json",
+                                                "sha256":  "613022c71d8772f20b8df7b3543955013950a3beea3afa432092461e95fcc140",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC08.normalized.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC08.raw.json",
+                                                "sha256":  "02b032ccdd1a085073ec9e51ad18e99517fbe37fa5da5eadcbbffa1bb3707bb9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC09.normalized.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC09.raw.json",
+                                                "sha256":  "96796f4bd2dc24c892be4ff2122df200e2a736196614e8464e4a141539bbbf5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC10.normalized.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/QC10.raw.json",
+                                                "sha256":  "d08f677fd3b4c5e0fb1356d3d7104ac3d6053c5a04361477982efcdf804aaa5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053334Z-62b9aa/original/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/checks.json",
+                                                "sha256":  "1be76f3330b3b7802e479a4b1cfe4e421e2e07c443597b2725bd887f7eff0fec",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/environment.json",
+                                                "sha256":  "a5a38ddc478e227d40737964d94e00f4606a2507887b9c01ffb6a2c3d209bb76",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/manifest.json",
+                                                "sha256":  "5ffbbae02a8c3cebb2cc2dec850acc8926cf11bd0c28872c0f97c0178608f1a7",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/mutation.json",
+                                                "sha256":  "6ece5b7f6b5adfb511041a1181ee4bd0c547a20b6f4417c1aeefff967084f35d",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/records.json",
+                                                "sha256":  "3a06395ecfd954ac241e2a740e8f81449a712f12d73ed147b9a462a7e1fc841f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/relatorio.html",
+                                                "sha256":  "ecfeed02646644048bb91d7ed592be27b41648b98ff89a2e0500419b4a96c63c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/requirements.json",
+                                                "sha256":  "e611936d4f91e41096c38a8a8fa5f61b9294b9cc1c11b622d9a500757a99d85c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/summary.json",
+                                                "sha256":  "0c9b54fcc88c8f11f1e468791528e457057acef1147ccbfa6f745fff042901be",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/catalog/corrigido.json",
+                                                "sha256":  "cb206fc1c5c32c5de1cbd137560c1c57a0a67b2f3e303dd19bd101221c5970af",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/catalog/original.json",
+                                                "sha256":  "681c84c8b4e3741a5612b8b1a7fbcd9d315726f346f90d42fe0ce6746caf1fd2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/docs/ARQUITETURA.md",
+                                                "sha256":  "9aa621b46bbc2c390af7ed63a455ba04c86aa5274aa8f5c900f46eba7481b102",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/docs/DEMONSTRACAO.md",
+                                                "sha256":  "a887f624cdd6a7815b499b1f88d372af223007883be45d5bed5a17c544f68e6d",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/docs/NVIDIA_AUTO_ONTOLOGY.md",
+                                                "sha256":  "1e2ab091d662d4efa0f91c91565c06a0a0ed5df0420c57a010996b2f5a270ad7",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/docs/requirements.json",
+                                                "sha256":  "8b1a924a1021b7115db38430b31837194fc20e2a4e75a0b5462321b9384800a3",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/mappings/corrigido.ttl",
+                                                "sha256":  "3ba2bd78bd3293c555c81af138c84b410504b1f0e8753bde31135e4883cc08d0",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/mappings/original.ttl",
+                                                "sha256":  "b8172b509fbd1b8ae495118aa6786ca380c1e90473be98e5a5a0122434104a90",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/ontology/sem_hierarquia.ttl",
+                                                "sha256":  "07ff49876cfdad6284c848724b718501488053d718c5b0d8b23a4818f6c6f149",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/ontology/vendas.ttl",
+                                                "sha256":  "b3473342fa72452bebc8634cc300000c9f695927754828d7fb9995cbe38a76ef",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/questions.json",
+                                                "sha256":  "0274e6627b624a814a8d28db1eae709d7ae7ea97438fbd66b7e05fbcf205daae",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC01.rq",
+                                                "sha256":  "5d3463934dc0e14240c34db096ec1303e3d1da6704eab69d4943319158826c86",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC02.rq",
+                                                "sha256":  "23d52037916edc8d99e5fd8aa098f00f934c2062528532b2194dbc9931b3a8d2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC03.rq",
+                                                "sha256":  "8c01e9a200897fa7cffa550272a148d0380d463d3b94a075793d6b48452f90db",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC04.rq",
+                                                "sha256":  "54264124a7c30867b28542a5314ded2cb847915d1948b728584a5b065020779b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC05.rq",
+                                                "sha256":  "18356435921b0fcc30cecca95ce93fa3924e54e63f69806cf2e13e252f8d6637",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC06.rq",
+                                                "sha256":  "e7546af59c507ab49ef469bd6ff993766f0cb1e523e91153f39f3594d28ef2d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC07.rq",
+                                                "sha256":  "03d5ae0ebdac106784016d767d0ef4c6c1cdaa360342fb199fc116fe83817e23",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC08.rq",
+                                                "sha256":  "234b8c50f3d1937d5d044ffe9ce84ade4435fdd34da48a2d82c77f1d0d994a2a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC09.rq",
+                                                "sha256":  "181244d40222ee520ed8cb2ce62f86644ca49dbe3b846e7e2d4c2f952c8aea8c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sparql/QC10.rq",
+                                                "sha256":  "a02d6caece4212785d6ab6870dde61cf3efdb1408244e8b7cd0086f5a9fdedf3",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC01.sql",
+                                                "sha256":  "7bd29cd9ca3e40c23ed72c2730c6be79d629ca8ba256669914d8653948271b48",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC02.sql",
+                                                "sha256":  "1aa08fa8d8f227cbb3e2c6ad172bca66b00c24f2dc63e4d692915c70e4e70866",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC03.sql",
+                                                "sha256":  "b6707b1582716f09d6c6ad4b8cff047be3f0929e665bc55fe4475e1604731e00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC04.sql",
+                                                "sha256":  "3dd630402f3ef45b055715f651370ac9172fd25bdb822a1545b35e91bb0301f0",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC05.sql",
+                                                "sha256":  "6d803dfb9d0de7788a58a00f5ce99902025d928526ebf719570908c5f886e7f5",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC06.sql",
+                                                "sha256":  "6ce1eeaee253405eeaf6f39f9e560d17ff7be02af32091a50c836bef948346ea",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC07.sql",
+                                                "sha256":  "d4b57bcee295b0814be299db2136e0f4906b8d2f16bc746eb6e315b2c9e3d084",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC08.sql",
+                                                "sha256":  "f9e55f31c2595290abfe062c1aa255d27717b9e4b1982f13550194f6a760ae4c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC09.sql",
+                                                "sha256":  "18fc6faee736a203d0e3eaa0a0ae5fd8b790542e76ad0dd7c2822d3bdf979005",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/queries/sql/QC10.sql",
+                                                "sha256":  "e03786cd67b34189f64ed951063763c49255ec6bf61435a1ed45ea33e35c9bfa",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/sql/mutate.sql",
+                                                "sha256":  "05e5d6bef647d392e18e02e1214ffbb6b7c08a4ab1c706df8545edae087fd299",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/sql/schema.sql",
+                                                "sha256":  "c93f67f92db9acb03e1acf814b2d184ca803e5c0f56c01d61ad646d66366ab6a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/artifacts/sql/seed.sql",
+                                                "sha256":  "64bd6803eb7a8907af880a67689ec8afcaf1b78b48fc312ef81c9fdde773a38a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/metadata.json",
+                                                "sha256":  "618a03308ab67e0c86073b0bad84e939ecb5a1ab73ac99c913a3e074498e9f7a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC01.normalized.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC01.raw.json",
+                                                "sha256":  "48e7c3a8350c2e44aad4e315abef2f1a85140962fd51db9c4eb80c31944c493b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC02.normalized.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC02.raw.json",
+                                                "sha256":  "d1a89dc5c43befb65815412ad19a1a56106bf7610d867aa21caa84dd0899dfe9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC03.normalized.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC03.raw.json",
+                                                "sha256":  "7b7def877b0132cc457403ebd0828710921c4b69141d5729353065cee82aa5b2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC04.normalized.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC04.raw.json",
+                                                "sha256":  "ca1baa802c11ca15760994a0046b3b1a0103d495645fdff8746cbef832c04ec2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC05.normalized.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC05.raw.json",
+                                                "sha256":  "9f910fc1314107422b1d1435133c002ee0097b55f2af1ea5812a82c5f2f09ef4",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC06.normalized.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC06.raw.json",
+                                                "sha256":  "e2e6564d910671bdd7aaa1289514abaa8ca74e498195ab4994ddd4defea29ce2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC07.normalized.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC07.raw.json",
+                                                "sha256":  "613022c71d8772f20b8df7b3543955013950a3beea3afa432092461e95fcc140",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC08.normalized.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC08.raw.json",
+                                                "sha256":  "02b032ccdd1a085073ec9e51ad18e99517fbe37fa5da5eadcbbffa1bb3707bb9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC09.normalized.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC09.raw.json",
+                                                "sha256":  "96796f4bd2dc24c892be4ff2122df200e2a736196614e8464e4a141539bbbf5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC10.normalized.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/QC10.raw.json",
+                                                "sha256":  "d08f677fd3b4c5e0fb1356d3d7104ac3d6053c5a04361477982efcdf804aaa5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/corrigida/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC01.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC02.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC03.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC04.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC05.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC06.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC07.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC08.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC09.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/expected/QC10.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/incompativel/metadata.json",
+                                                "sha256":  "618a03308ab67e0c86073b0bad84e939ecb5a1ab73ac99c913a3e074498e9f7a",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/incompativel/startup.log",
+                                                "sha256":  "77f18c0c743db93cd92f7f2c3c9216c280da130feca0622e6e221f304ab59c18",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/negative_control/QC08.raw.json",
+                                                "sha256":  "520e65d6dc2e7f77f5019b3fb693e7568666c904eb601539f82289b28445243d",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/negative_control/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/metadata.json",
+                                                "sha256":  "75f5bc342e7e6ee056289c277f7c346719eeeaec54b9ef8891946d82c6bda4f9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC01.normalized.json",
+                                                "sha256":  "aad05fef85731aa515f7910ed1e9c52e0195f703b67ead59d6fe6454d0abc876",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC01.raw.json",
+                                                "sha256":  "48e7c3a8350c2e44aad4e315abef2f1a85140962fd51db9c4eb80c31944c493b",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC02.normalized.json",
+                                                "sha256":  "035654b7d37609bc806ce5a33d5efbe7b99afc1b766318baf65b1fe10edf2460",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC02.raw.json",
+                                                "sha256":  "d1a89dc5c43befb65815412ad19a1a56106bf7610d867aa21caa84dd0899dfe9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC03.normalized.json",
+                                                "sha256":  "453515a988e8a82bee0ed471eb239cc1072afb4539a3e20360734f31aee5553c",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC03.raw.json",
+                                                "sha256":  "7b7def877b0132cc457403ebd0828710921c4b69141d5729353065cee82aa5b2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC04.normalized.json",
+                                                "sha256":  "6581e1a49abff433699efcee5be0a6b6204b80e9521b6fc35c5d14b9ce8da948",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC04.raw.json",
+                                                "sha256":  "ca1baa802c11ca15760994a0046b3b1a0103d495645fdff8746cbef832c04ec2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC05.normalized.json",
+                                                "sha256":  "2d5d89eee739e340d63ee9739b87f7b4ea5243bf469cfe59f6bfe83281ce2ff2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC05.raw.json",
+                                                "sha256":  "9f910fc1314107422b1d1435133c002ee0097b55f2af1ea5812a82c5f2f09ef4",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC06.normalized.json",
+                                                "sha256":  "93497fe0182cd12f700dfac186e96cc282c47508fec6f1610edb7c6d72bbaa00",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC06.raw.json",
+                                                "sha256":  "e2e6564d910671bdd7aaa1289514abaa8ca74e498195ab4994ddd4defea29ce2",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC07.normalized.json",
+                                                "sha256":  "4d33335ea60e53375eb4698c119db050b4c15307eb4c6e58715a3431a7774dce",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC07.raw.json",
+                                                "sha256":  "613022c71d8772f20b8df7b3543955013950a3beea3afa432092461e95fcc140",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC08.normalized.json",
+                                                "sha256":  "68d82a75d28e8ae4a749e66c6812a94b20b6a74727e0fee118036f766a488500",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC08.raw.json",
+                                                "sha256":  "02b032ccdd1a085073ec9e51ad18e99517fbe37fa5da5eadcbbffa1bb3707bb9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC09.normalized.json",
+                                                "sha256":  "ad771bccf954f0a3fb25f3507f90aa5a1eb84e078e12ddabc59aa32a66b9d4d9",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC09.raw.json",
+                                                "sha256":  "96796f4bd2dc24c892be4ff2122df200e2a736196614e8464e4a141539bbbf5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC10.normalized.json",
+                                                "sha256":  "7077f3cf3b1ea6dc62ca004925b3a88d6e9e571b6c4f839fa69fd664b82ed512",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/QC10.raw.json",
+                                                "sha256":  "d08f677fd3b4c5e0fb1356d3d7104ac3d6053c5a04361477982efcdf804aaa5f",
+                                                "valid":  true
+                                            },
+                                            {
+                                                "path":  "20261111T053821Z-b22840/original/startup.log",
+                                                "sha256":  "f5a66ab9bf9c548bd26e4050a6ad075b4c51d995581675249d06e086c3af354f",
+                                                "valid":  true
+                                            }
+                                        ]
+                          },
+    "linux_manifests":  [
+                            {
+                                "run_id":  "20261111T053334Z-62b9aa",
+                                "file_count":  98,
+                                "expected_file_count":  98,
+                                "manifest_entries":  97,
+                                "manifest_sha256":  "e6a451a4b287ca34905604143c975ff477a35cd93780e8dc2e397d5f9cfe7893",
+                                "expected_manifest_sha256":  "e6a451a4b287ca34905604143c975ff477a35cd93780e8dc2e397d5f9cfe7893",
+                                "invalid":  [
+
+                                            ],
+                                "valid":  true
+                            },
+                            {
+                                "run_id":  "20261111T053821Z-b22840",
+                                "file_count":  100,
+                                "expected_file_count":  100,
+                                "manifest_entries":  99,
+                                "manifest_sha256":  "5ffbbae02a8c3cebb2cc2dec850acc8926cf11bd0c28872c0f97c0178608f1a7",
+                                "expected_manifest_sha256":  "5ffbbae02a8c3cebb2cc2dec850acc8926cf11bd0c28872c0f97c0178608f1a7",
+                                "invalid":  [
+
+                                            ],
+                                "valid":  true
+                            }
+                        ],
+    "linux_index":  {
+                        "path":  "evidencias/latest.json",
+                        "sha256":  "1f2e75e44657a1dcc174d6cabdd89ae6bf306b33584eb4a86dcbcba356fa9971",
+                        "valid":  true
+                    },
+    "phase0":  {
+                   "files_compared":  6,
+                   "excluded":  [
+                                    "README.md",
+                                    ".gitignore"
+                                ],
+                   "files":  [
+                                 {
+                                     "path":  "docs/TCC 1 - Gabriel Venerusso.docx",
+                                     "base_blob":  "fb975865e7be633418a71686d8cb1d1625187d6c",
+                                     "head_blob":  "fb975865e7be633418a71686d8cb1d1625187d6c",
+                                     "expected_sha256":  "682ccfaf6bd4df8b7c68f485a5dfd158c09a61dc4b6d7168a575dad02f77c1ea",
+                                     "disk_sha256":  "682ccfaf6bd4df8b7c68f485a5dfd158c09a61dc4b6d7168a575dad02f77c1ea",
+                                     "valid":  true
+                                 },
+                                 {
+                                     "path":  "docs/fase0_ambiente.md",
+                                     "base_blob":  "1e83029f2bd0aa77ec24e1f347398c455c83fdba",
+                                     "head_blob":  "1e83029f2bd0aa77ec24e1f347398c455c83fdba",
+                                     "expected_sha256":  "fec6fb5c64ee4b2b9d3986ed54100df120519f376e3822dd5683963d72f6d11f",
+                                     "disk_sha256":  "fec6fb5c64ee4b2b9d3986ed54100df120519f376e3822dd5683963d72f6d11f",
+                                     "valid":  true
+                                 },
+                                 {
+                                     "path":  "docs/pendencias_capitulo4.md",
+                                     "base_blob":  "e7c5c8f75b5ee87669298e8e7caf512a64ab035a",
+                                     "head_blob":  "e7c5c8f75b5ee87669298e8e7caf512a64ab035a",
+                                     "expected_sha256":  "adfc7c7e38fdf744e03723d87419a93f52b6453fcdaa41873c30a0d909084d4f",
+                                     "disk_sha256":  "adfc7c7e38fdf744e03723d87419a93f52b6453fcdaa41873c30a0d909084d4f",
+                                     "valid":  true
+                                 },
+                                 {
+                                     "path":  "environment.json",
+                                     "base_blob":  "b1bbb1aeeddb1d98cc3e2be938aef2094b9696c7",
+                                     "head_blob":  "b1bbb1aeeddb1d98cc3e2be938aef2094b9696c7",
+                                     "expected_sha256":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                     "disk_sha256":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                     "valid":  true
+                                 },
+                                 {
+                                     "path":  "results/environment/phase0-20261121T0442371275245Z/environment.json",
+                                     "base_blob":  "b1bbb1aeeddb1d98cc3e2be938aef2094b9696c7",
+                                     "head_blob":  "b1bbb1aeeddb1d98cc3e2be938aef2094b9696c7",
+                                     "expected_sha256":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                     "disk_sha256":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                     "valid":  true
+                                 },
+                                 {
+                                     "path":  "scripts/inspect_environment.ps1",
+                                     "base_blob":  "dc1c5c14f6852bcff4abbd1ec6af139dd1b6a3f5",
+                                     "head_blob":  "dc1c5c14f6852bcff4abbd1ec6af139dd1b6a3f5",
+                                     "expected_sha256":  "ef95a6ca6e7cfd57b02b377b38465d3966532728b6b57d6897313f32ac305068",
+                                     "disk_sha256":  "ef95a6ca6e7cfd57b02b377b38465d3966532728b6b57d6897313f32ac305068",
+                                     "valid":  true
+                                 }
+                             ]
+               },
+    "invalid":  [
+
+                ],
+    "valid":  true
+}
