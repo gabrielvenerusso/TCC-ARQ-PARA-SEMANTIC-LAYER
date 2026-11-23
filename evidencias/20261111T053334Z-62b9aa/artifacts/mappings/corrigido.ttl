@@ -1,0 +1,44 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <https://example.org/tcc/vendas#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<urn:tcc:mapping:cliente> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT * FROM experimento.cliente""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/cliente/{id_cliente}" ; rr:class :Cliente ] ;
+ rr:predicateObjectMap [ rr:predicate :id ; rr:objectMap [ rr:column "id_cliente" ; rr:datatype xsd:integer ] ] ;
+ rr:predicateObjectMap [ rr:predicate :nome ; rr:objectMap [ rr:column "nome" ; rr:datatype xsd:string ] ] ;
+ rr:predicateObjectMap [ rr:predicate :cidade ; rr:objectMap [ rr:column "cidade" ; rr:datatype xsd:string ] ] .
+
+<urn:tcc:mapping:produto> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT * FROM experimento.produto""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/produto/{id_produto}" ; rr:class :Produto ] ;
+ rr:predicateObjectMap [ rr:predicate :id ; rr:objectMap [ rr:column "id_produto" ; rr:datatype xsd:integer ] ] ;
+ rr:predicateObjectMap [ rr:predicate :descricao ; rr:objectMap [ rr:column "descricao" ; rr:datatype xsd:string ] ] ;
+ rr:predicateObjectMap [ rr:predicate :categoria ; rr:objectMap [ rr:column "categoria" ; rr:datatype xsd:string ] ] .
+
+<urn:tcc:mapping:pedido_dados> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT id_pedido,id_cliente,data_pedido FROM experimento.pedido""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/pedido/{id_pedido}" ] ;
+ rr:predicateObjectMap [ rr:predicate :id ; rr:objectMap [ rr:column "id_pedido" ; rr:datatype xsd:integer ] ] ;
+ rr:predicateObjectMap [ rr:predicate :cliente ; rr:objectMap [ rr:template "https://example.org/tcc/recurso/cliente/{id_cliente}" ] ] ;
+ rr:predicateObjectMap [ rr:predicate :dataPedido ; rr:objectMap [ rr:column "data_pedido" ; rr:datatype xsd:date ] ] .
+
+<urn:tcc:mapping:item> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT * FROM experimento.item_pedido""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/item/{id_item}" ; rr:class :ItemPedido ] ;
+ rr:predicateObjectMap [ rr:predicate :id ; rr:objectMap [ rr:column "id_item" ; rr:datatype xsd:integer ] ] ;
+ rr:predicateObjectMap [ rr:predicate :pedido ; rr:objectMap [ rr:template "https://example.org/tcc/recurso/pedido/{id_pedido}" ] ] ;
+ rr:predicateObjectMap [ rr:predicate :produto ; rr:objectMap [ rr:template "https://example.org/tcc/recurso/produto/{id_produto}" ] ] ;
+ rr:predicateObjectMap [ rr:predicate :quantidade ; rr:objectMap [ rr:column "quantidade" ; rr:datatype xsd:integer ] ] ;
+ rr:predicateObjectMap [ rr:predicate :valorUnitario ; rr:objectMap [ rr:column "valor_unitario" ; rr:datatype xsd:decimal ] ] .
+
+<urn:tcc:mapping:situacao_1> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT id_pedido FROM experimento.pedido WHERE situacao_id=1""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/pedido/{id_pedido}" ; rr:class :PedidoAberto ] .
+
+<urn:tcc:mapping:situacao_2> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT id_pedido FROM experimento.pedido WHERE situacao_id=2""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/pedido/{id_pedido}" ; rr:class :PedidoConcluido ] .
+
+<urn:tcc:mapping:situacao_3> a rr:TriplesMap ;
+ rr:logicalTable [ rr:sqlQuery """SELECT id_pedido FROM experimento.pedido WHERE situacao_id=3""" ] ;
+ rr:subjectMap [ rr:template "https://example.org/tcc/recurso/pedido/{id_pedido}" ; rr:class :PedidoCancelado ] .

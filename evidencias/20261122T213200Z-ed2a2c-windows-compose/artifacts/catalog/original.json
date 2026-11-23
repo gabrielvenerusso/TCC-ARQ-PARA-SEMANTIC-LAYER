@@ -1,0 +1,167 @@
+{
+  "version": "1.0.0",
+  "status_codes": {
+    "1": "aberto",
+    "2": "concluído",
+    "3": "cancelado"
+  },
+  "review": {
+    "status": "pendente_revisao_humana",
+    "reviewer": null,
+    "reviewed_at": null,
+    "note": "Os testes técnicos não substituem a revisão das definições pelo pesquisador."
+  },
+  "terms": [
+    {
+      "name": "Cliente",
+      "description": "Pessoa fictícia associável a um pedido. Pode existir sem pedidos.",
+      "synonyms": [
+        "comprador"
+      ],
+      "table": "cliente",
+      "columns": [
+        "id_cliente",
+        "nome",
+        "cidade"
+      ],
+      "mapping_ids": [
+        "cliente"
+      ]
+    },
+    {
+      "name": "Produto",
+      "description": "Bem ou serviço fictício. Pode existir sem itens.",
+      "synonyms": [
+        "material",
+        "serviço"
+      ],
+      "table": "produto",
+      "columns": [
+        "id_produto",
+        "descricao",
+        "categoria"
+      ],
+      "mapping_ids": [
+        "produto"
+      ]
+    },
+    {
+      "name": "Pedido",
+      "description": "Pedido de venda com um cliente e pelo menos um item no conjunto de dados.",
+      "synonyms": [
+        "ordem de venda"
+      ],
+      "table": "pedido",
+      "columns": [
+        "id_pedido",
+        "id_cliente",
+        "data_pedido",
+        "cod_situacao"
+      ],
+      "mapping_ids": [
+        "pedido_dados",
+        "situacao_1",
+        "situacao_2",
+        "situacao_3"
+      ]
+    },
+    {
+      "name": "ItemPedido",
+      "description": "Linha individual do pedido. Linhas distintas do mesmo produto não são fundidas.",
+      "synonyms": [
+        "item",
+        "linha do pedido"
+      ],
+      "table": "item_pedido",
+      "columns": [
+        "id_item",
+        "id_pedido",
+        "id_produto",
+        "quantidade",
+        "valor_unitario"
+      ],
+      "mapping_ids": [
+        "item"
+      ]
+    },
+    {
+      "name": "PedidoConcluido",
+      "description": "Pedido cujo código de situação é 2; é subclasse de Pedido.",
+      "synonyms": [
+        "pedido finalizado"
+      ],
+      "table": "pedido",
+      "columns": [
+        "cod_situacao"
+      ],
+      "mapping_ids": [
+        "situacao_2"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "valor_total_pedido",
+      "definition": "Soma de quantidade × valor unitário dos itens do pedido, sem frete, tributos, descontos ou devoluções. Não equivale a faturamento contábil.",
+      "expression": "SUM(item_pedido.quantidade * item_pedido.valor_unitario)",
+      "grain": "pedido",
+      "unit": "BRL",
+      "reference_question": "QC04"
+    }
+  ],
+  "relations": [
+    {
+      "from": "pedido.id_cliente",
+      "to": "cliente.id_cliente",
+      "cardinality": "N:1"
+    },
+    {
+      "from": "item_pedido.id_pedido",
+      "to": "pedido.id_pedido",
+      "cardinality": "N:1"
+    },
+    {
+      "from": "item_pedido.id_produto",
+      "to": "produto.id_produto",
+      "cardinality": "N:1"
+    }
+  ],
+  "coverage": {
+    "supported_question_ids": [
+      "QC01",
+      "QC02",
+      "QC03",
+      "QC04",
+      "QC05",
+      "QC06",
+      "QC07",
+      "QC08",
+      "QC09",
+      "QC10"
+    ],
+    "not_supported": [
+      "faturamento contábil",
+      "margem de lucro",
+      "gastos com publicidade",
+      "previsões"
+    ],
+    "note": "Cobertura explícita do roteiro; não classifica perguntas livres com IA."
+  },
+  "field_descriptions": {
+    "cliente.id_cliente": "Identificador do cliente.",
+    "cliente.nome": "Nome fictício do cliente.",
+    "cliente.cidade": "Cidade opcional; ausente permanece NULL.",
+    "produto.id_produto": "Identificador do produto.",
+    "produto.descricao": "Descrição fictícia do produto.",
+    "produto.categoria": "Categoria Material ou Serviço.",
+    "pedido.id_pedido": "Identificador do pedido.",
+    "pedido.id_cliente": "Cliente responsável pelo pedido.",
+    "pedido.data_pedido": "Data do pedido, sem horário.",
+    "pedido.cod_situacao": "Código físico: 1 aberto, 2 concluído, 3 cancelado.",
+    "item_pedido.id_item": "Identificador da linha, mesmo com produto repetido.",
+    "item_pedido.id_pedido": "Pedido que contém a linha.",
+    "item_pedido.id_produto": "Produto da linha.",
+    "item_pedido.quantidade": "Quantidade inteira positiva.",
+    "item_pedido.valor_unitario": "Preço unitário em BRL, com duas casas decimais."
+  }
+}

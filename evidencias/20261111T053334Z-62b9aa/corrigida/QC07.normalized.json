@@ -1,0 +1,48 @@
+{
+  "fields": [
+    "id",
+    "cidade"
+  ],
+  "rows": [
+    [
+      "1",
+      "Joinville"
+    ],
+    [
+      "2",
+      "Blumenau"
+    ],
+    [
+      "3",
+      null
+    ],
+    [
+      "4",
+      "Curitiba"
+    ],
+    [
+      "5",
+      "Joinville"
+    ],
+    [
+      "6",
+      "Florianópolis"
+    ],
+    [
+      "7",
+      "Curitiba"
+    ],
+    [
+      "8",
+      null
+    ],
+    [
+      "9",
+      "Joinville"
+    ],
+    [
+      "10",
+      "São Paulo"
+    ]
+  ]
+}

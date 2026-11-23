@@ -1,0 +1,1073 @@
+[
+  {
+    "execution_id": "original-QC01",
+    "question_id": "QC01",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.618479+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC01.rq",
+      "sql_reference": "artifacts/queries/sql/QC01.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC01.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC01.raw.json",
+    "normalized": "original/QC01.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 57.627
+  },
+  {
+    "execution_id": "original-QC02",
+    "question_id": "QC02",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.676333+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC02.rq",
+      "sql_reference": "artifacts/queries/sql/QC02.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC02.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC02.raw.json",
+    "normalized": "original/QC02.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 70.065
+  },
+  {
+    "execution_id": "original-QC03",
+    "question_id": "QC03",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "cliente"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.746622+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC03.rq",
+      "sql_reference": "artifacts/queries/sql/QC03.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC03.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC03.raw.json",
+    "normalized": "original/QC03.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 22.164
+  },
+  {
+    "execution_id": "original-QC04",
+    "question_id": "QC04",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "item"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.769024+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC04.rq",
+      "sql_reference": "artifacts/queries/sql/QC04.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC04.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC04.raw.json",
+    "normalized": "original/QC04.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 46.366
+  },
+  {
+    "execution_id": "original-QC05",
+    "question_id": "QC05",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.815662+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC05.rq",
+      "sql_reference": "artifacts/queries/sql/QC05.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC05.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC05.raw.json",
+    "normalized": "original/QC05.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 62.396
+  },
+  {
+    "execution_id": "original-QC06",
+    "question_id": "QC06",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.878482+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC06.rq",
+      "sql_reference": "artifacts/queries/sql/QC06.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC06.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC06.raw.json",
+    "normalized": "original/QC06.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 24.013
+  },
+  {
+    "execution_id": "original-QC07",
+    "question_id": "QC07",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.902804+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC07.rq",
+      "sql_reference": "artifacts/queries/sql/QC07.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC07.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC07.raw.json",
+    "normalized": "original/QC07.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 25.993
+  },
+  {
+    "execution_id": "original-QC08",
+    "question_id": "QC08",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "situacao_2"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.929110+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC08.rq",
+      "sql_reference": "artifacts/queries/sql/QC08.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC08.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC08.raw.json",
+    "normalized": "original/QC08.normalized.json",
+    "comparison": {
+      "correct": true
+    },
+    "duration_ms": 13.599
+  },
+  {
+    "execution_id": "original-QC09",
+    "question_id": "QC09",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.943032+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC09.rq",
+      "sql_reference": "artifacts/queries/sql/QC09.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC09.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC09.raw.json",
+    "normalized": "original/QC09.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 16.98
+  },
+  {
+    "execution_id": "original-QC10",
+    "question_id": "QC10",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "item",
+      "produto"
+    ],
+    "configuration": "original",
+    "timestamp": "2026-11-11T05:38:25.960469+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC10.rq",
+      "sql_reference": "artifacts/queries/sql/QC10.sql",
+      "schema": "original/metadata.json"
+    },
+    "expected": "expected/QC10.json",
+    "startup_log": "original/startup.log",
+    "status": "correct",
+    "result": "original/QC10.raw.json",
+    "normalized": "original/QC10.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 14.105
+  },
+  {
+    "execution_id": "incompativel-QC01",
+    "question_id": "QC01",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.727423+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC01.rq",
+      "sql_reference": "artifacts/queries/sql/QC01.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC01.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.004
+  },
+  {
+    "execution_id": "incompativel-QC02",
+    "question_id": "QC02",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.728091+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC02.rq",
+      "sql_reference": "artifacts/queries/sql/QC02.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC02.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC03",
+    "question_id": "QC03",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "cliente"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.728552+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC03.rq",
+      "sql_reference": "artifacts/queries/sql/QC03.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC03.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC04",
+    "question_id": "QC04",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "item"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.728906+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC04.rq",
+      "sql_reference": "artifacts/queries/sql/QC04.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC04.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC05",
+    "question_id": "QC05",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.729317+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC05.rq",
+      "sql_reference": "artifacts/queries/sql/QC05.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC05.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC06",
+    "question_id": "QC06",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.729677+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC06.rq",
+      "sql_reference": "artifacts/queries/sql/QC06.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC06.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC07",
+    "question_id": "QC07",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.733788+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC07.rq",
+      "sql_reference": "artifacts/queries/sql/QC07.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC07.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC08",
+    "question_id": "QC08",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "situacao_2"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.734261+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC08.rq",
+      "sql_reference": "artifacts/queries/sql/QC08.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC08.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC09",
+    "question_id": "QC09",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.734659+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC09.rq",
+      "sql_reference": "artifacts/queries/sql/QC09.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC09.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "incompativel-QC10",
+    "question_id": "QC10",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "item",
+      "produto"
+    ],
+    "configuration": "incompativel",
+    "timestamp": "2026-11-11T05:38:28.735066+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/original.ttl",
+      "catalog": "artifacts/catalog/original.json",
+      "query": "artifacts/queries/sparql/QC10.rq",
+      "sql_reference": "artifacts/queries/sql/QC10.sql",
+      "schema": "incompativel/metadata.json"
+    },
+    "expected": "expected/QC10.json",
+    "startup_log": "incompativel/startup.log",
+    "status": "blocked",
+    "error": "Ontop encerrou na inicialização (código 1); consultar startup.log.",
+    "phase": "startup",
+    "duration_ms": 0.001
+  },
+  {
+    "execution_id": "corrigida-QC01",
+    "question_id": "QC01",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.196327+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC01.rq",
+      "sql_reference": "artifacts/queries/sql/QC01.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC01.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC01.raw.json",
+    "normalized": "corrigida/QC01.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 62.877
+  },
+  {
+    "execution_id": "corrigida-QC02",
+    "question_id": "QC02",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.259814+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC02.rq",
+      "sql_reference": "artifacts/queries/sql/QC02.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC02.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC02.raw.json",
+    "normalized": "corrigida/QC02.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 70.642
+  },
+  {
+    "execution_id": "corrigida-QC03",
+    "question_id": "QC03",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "cliente"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.331038+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC03.rq",
+      "sql_reference": "artifacts/queries/sql/QC03.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC03.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC03.raw.json",
+    "normalized": "corrigida/QC03.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 26.513
+  },
+  {
+    "execution_id": "corrigida-QC04",
+    "question_id": "QC04",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2",
+      "item"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.358151+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC04.rq",
+      "sql_reference": "artifacts/queries/sql/QC04.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC04.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC04.raw.json",
+    "normalized": "corrigida/QC04.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 49.169
+  },
+  {
+    "execution_id": "corrigida-QC05",
+    "question_id": "QC05",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados",
+      "situacao_1",
+      "situacao_2",
+      "situacao_3"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.407949+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC05.rq",
+      "sql_reference": "artifacts/queries/sql/QC05.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC05.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC05.raw.json",
+    "normalized": "corrigida/QC05.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 54.573
+  },
+  {
+    "execution_id": "corrigida-QC06",
+    "question_id": "QC06",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente",
+      "pedido_dados"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.463353+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC06.rq",
+      "sql_reference": "artifacts/queries/sql/QC06.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC06.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC06.raw.json",
+    "normalized": "corrigida/QC06.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 22.173
+  },
+  {
+    "execution_id": "corrigida-QC07",
+    "question_id": "QC07",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "cliente"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.486165+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC07.rq",
+      "sql_reference": "artifacts/queries/sql/QC07.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC07.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC07.raw.json",
+    "normalized": "corrigida/QC07.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 24.338
+  },
+  {
+    "execution_id": "corrigida-QC08",
+    "question_id": "QC08",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "situacao_2"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.511181+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC08.rq",
+      "sql_reference": "artifacts/queries/sql/QC08.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC08.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC08.raw.json",
+    "normalized": "corrigida/QC08.normalized.json",
+    "comparison": {
+      "correct": true
+    },
+    "duration_ms": 14.406
+  },
+  {
+    "execution_id": "corrigida-QC09",
+    "question_id": "QC09",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "pedido_dados",
+      "situacao_2"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.526264+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC09.rq",
+      "sql_reference": "artifacts/queries/sql/QC09.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC09.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC09.raw.json",
+    "normalized": "corrigida/QC09.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 17.855
+  },
+  {
+    "execution_id": "corrigida-QC10",
+    "question_id": "QC10",
+    "requirements": [
+      "R02",
+      "R03",
+      "R04",
+      "R06"
+    ],
+    "mapping_ids": [
+      "item",
+      "produto"
+    ],
+    "configuration": "corrigida",
+    "timestamp": "2026-11-11T05:38:32.544831+00:00",
+    "git_commit": "5e7d89ae84476c8db215477ccc9fe7a48178fb42",
+    "data_sha256": "a2340f20065018f792b898c4d453f85588b616bb83102bac5687d9174efb305c",
+    "artifacts": {
+      "ontology": "artifacts/ontology/vendas.ttl",
+      "mapping": "artifacts/mappings/corrigido.ttl",
+      "catalog": "artifacts/catalog/corrigido.json",
+      "query": "artifacts/queries/sparql/QC10.rq",
+      "sql_reference": "artifacts/queries/sql/QC10.sql",
+      "schema": "corrigida/metadata.json"
+    },
+    "expected": "expected/QC10.json",
+    "startup_log": "corrigida/startup.log",
+    "status": "correct",
+    "result": "corrigida/QC10.raw.json",
+    "normalized": "corrigida/QC10.normalized.json",
+    "comparison": {
+      "correct": true,
+      "missing": [],
+      "extra": []
+    },
+    "duration_ms": 14.152
+  }
+]

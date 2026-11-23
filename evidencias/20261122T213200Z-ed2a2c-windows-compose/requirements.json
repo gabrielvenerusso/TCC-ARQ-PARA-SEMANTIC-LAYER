@@ -1,0 +1,74 @@
+[
+  {
+    "id": "R01",
+    "description": "Descrever componentes e interfaces",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Revisão pelo pesquisador das responsabilidades dos componentes e de suas interfaces",
+    "expected_evidence": "docs/ARQUITETURA.md e registro da revisão humana",
+    "review_status": "pendente_revisao_humana",
+    "technical_status": "não aplicável",
+    "status": "pendente_revisao_humana",
+    "qualification": "A existência do documento não comprova a revisão das responsabilidades e interfaces pelo pesquisador."
+  },
+  {
+    "id": "R02",
+    "description": "Relacionar conceitos e dados",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Relacionar conceitos e dados",
+    "expected_evidence": "mappings/original.ttl",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente."
+  },
+  {
+    "id": "R03",
+    "description": "Restringir acesso a leitura",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Restringir acesso a leitura",
+    "expected_evidence": "checks.json:readonly",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente."
+  },
+  {
+    "id": "R04",
+    "description": "Responder consultas SPARQL e inferir subclasses",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Responder consultas SPARQL e inferir subclasses",
+    "expected_evidence": "records.json e checks.json:inference",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente."
+  },
+  {
+    "id": "R05",
+    "description": "Disponibilizar metadados e definições",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Disponibilizar metadados e definições; conferência do catálogo pelo pesquisador",
+    "expected_evidence": "metadata.json e catalog/*.json; registro da conferência humana",
+    "review_status": "pendente_revisao_humana",
+    "technical_status": "atendido",
+    "status": "pendente_revisao_humana",
+    "qualification": "A verificação estrutural do catálogo não substitui a conferência das definições pelo pesquisador."
+  },
+  {
+    "id": "R06",
+    "description": "Rastrear tentativas, artefatos e versões",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Rastrear tentativas, artefatos e versões",
+    "expected_evidence": "manifest.json e records.json",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente."
+  },
+  {
+    "id": "R07",
+    "description": "Adaptar mudança física sem alterar ontologia e consultas",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Adaptar mudança física sem alterar ontologia e consultas",
+    "expected_evidence": "mutation.json e summary.json",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente."
+  }
+]

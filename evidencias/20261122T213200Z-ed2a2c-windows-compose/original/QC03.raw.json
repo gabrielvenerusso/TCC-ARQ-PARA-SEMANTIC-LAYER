@@ -1,0 +1,122 @@
+{
+  "head": {
+    "vars": [
+      "id",
+      "nome"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "17"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 01"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "26"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 02"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "2"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 02"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 03"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "20"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 04"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "29"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 05"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "5"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 05"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "14"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 06"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "23"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 07"
+        }
+      },
+      {
+        "id": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "8"
+        },
+        "nome": {
+          "type": "literal",
+          "value": "Cliente 08"
+        }
+      }
+    ]
+  }
+}

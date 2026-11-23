@@ -1,0 +1,68 @@
+postgres-1  | 2026-11-22T21:32:54.103986763Z The files belonging to this database system will be owned by user "postgres".
+postgres-1  | 2026-11-22T21:32:54.104016904Z This user must also own the server process.
+postgres-1  | 2026-11-22T21:32:54.104020114Z 
+postgres-1  | 2026-11-22T21:32:54.104024274Z The database cluster will be initialized with locale "en_US.utf8".
+postgres-1  | 2026-11-22T21:32:54.104026184Z The default database encoding has accordingly been set to "UTF8".
+postgres-1  | 2026-11-22T21:32:54.104028204Z The default text search configuration will be set to "english".
+postgres-1  | 2026-11-22T21:32:54.104029884Z 
+postgres-1  | 2026-11-22T21:32:54.104031454Z Data page checksums are disabled.
+postgres-1  | 2026-11-22T21:32:54.104057060Z 
+postgres-1  | 2026-11-22T21:32:54.104078880Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1  | 2026-11-22T21:32:54.112547247Z creating subdirectories ... ok
+postgres-1  | 2026-11-22T21:32:54.112573988Z selecting dynamic shared memory implementation ... posix
+postgres-1  | 2026-11-22T21:32:54.127087153Z selecting default "max_connections" ... 100
+postgres-1  | 2026-11-22T21:32:54.150446501Z selecting default "shared_buffers" ... 128MB
+postgres-1  | 2026-11-22T21:32:54.174465898Z selecting default time zone ... Etc/UTC
+postgres-1  | 2026-11-22T21:32:54.175005773Z creating configuration files ... ok
+postgres-1  | 2026-11-22T21:32:54.310724133Z running bootstrap script ... ok
+postgres-1  | 2026-11-22T21:32:54.653967598Z performing post-bootstrap initialization ... ok
+postgres-1  | 2026-11-22T21:32:55.799939832Z initdb: warning: enabling "trust" authentication for local connections
+postgres-1  | 2026-11-22T21:32:55.799963293Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1  | 2026-11-22T21:32:55.799938987Z syncing data to disk ... ok
+postgres-1  | 2026-11-22T21:32:55.799969693Z 
+postgres-1  | 2026-11-22T21:32:55.799971723Z 
+postgres-1  | 2026-11-22T21:32:55.799973453Z Success. You can now start the database server using:
+postgres-1  | 2026-11-22T21:32:55.799975203Z 
+postgres-1  | 2026-11-22T21:32:55.799976763Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1  | 2026-11-22T21:32:55.799978363Z 
+postgres-1  | 2026-11-22T21:32:55.970051272Z waiting for server to start....2026-11-22 21:32:55.969 UTC [48] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+postgres-1  | 2026-11-22T21:32:56.039760784Z 2026-11-22 21:32:56.039 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-11-22T21:32:56.252397913Z 2026-11-22 21:32:56.252 UTC [51] LOG:  database system was shut down at 2026-11-22 21:32:54 UTC
+postgres-1  | 2026-11-22T21:32:56.331569382Z 2026-11-22 21:32:56.331 UTC [48] LOG:  database system is ready to accept connections
+postgres-1  | 2026-11-22T21:32:56.421156969Z  done
+postgres-1  | 2026-11-22T21:32:56.421178150Z server started
+postgres-1  | 2026-11-22T21:32:56.874911876Z CREATE DATABASE
+postgres-1  | 2026-11-22T21:32:56.875551244Z 
+postgres-1  | 2026-11-22T21:32:56.875624181Z 
+postgres-1  | 2026-11-22T21:32:56.875629501Z /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-databases.sql
+postgres-1  | 2026-11-22T21:32:56.952418196Z CREATE ROLE
+postgres-1  | 2026-11-22T21:32:57.528046206Z CREATE DATABASE
+postgres-1  | 2026-11-22T21:32:57.528907325Z 
+postgres-1  | 2026-11-22T21:32:57.528924506Z 
+postgres-1  | 2026-11-22T21:32:57.529888713Z waiting for server to shut down...2026-11-22 21:32:57.529 UTC [48] LOG:  received fast shutdown request
+postgres-1  | 2026-11-22T21:32:57.604939303Z .2026-11-22 21:32:57.604 UTC [48] LOG:  aborting any active transactions
+postgres-1  | 2026-11-22T21:32:57.606636079Z 2026-11-22 21:32:57.606 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+postgres-1  | 2026-11-22T21:32:57.606774668Z 2026-11-22 21:32:57.606 UTC [49] LOG:  shutting down
+postgres-1  | 2026-11-22T21:32:57.660176377Z 2026-11-22 21:32:57.660 UTC [49] LOG:  checkpoint starting: shutdown immediate
+postgres-1  | 2026-11-22T21:33:00.415356290Z ..2026-11-22 21:33:00.415 UTC [78] FATAL:  the database system is shutting down
+postgres-1  | 2026-11-22T21:33:00.981821846Z .2026-11-22 21:33:00.981 UTC [49] LOG:  checkpoint complete: wrote 1840 buffers (11.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.149 s, sync=2.819 s, total=3.375 s; sync files=601, longest=0.756 s, average=0.005 s; distance=8487 kB, estimate=8487 kB; lsn=0/1D30E18, redo lsn=0/1D30E18
+postgres-1  | 2026-11-22T21:33:00.989806935Z 2026-11-22 21:33:00.989 UTC [48] LOG:  database system is shut down
+postgres-1  | 2026-11-22T21:33:01.035376194Z  done
+postgres-1  | 2026-11-22T21:33:01.035404475Z server stopped
+postgres-1  | 2026-11-22T21:33:01.036459724Z 
+postgres-1  | 2026-11-22T21:33:01.036470154Z PostgreSQL init process complete; ready for start up.
+postgres-1  | 2026-11-22T21:33:01.036473675Z 
+postgres-1  | 2026-11-22T21:33:01.296878642Z 2026-11-22 21:33:01.296 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+postgres-1  | 2026-11-22T21:33:01.297019983Z 2026-11-22 21:33:01.296 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-11-22T21:33:01.297028493Z 2026-11-22 21:33:01.296 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-11-22T21:33:01.531584224Z 2026-11-22 21:33:01.531 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-11-22T21:33:02.211628256Z 2026-11-22 21:33:02.211 UTC [82] LOG:  database system was shut down at 2026-11-22 21:33:00 UTC
+postgres-1  | 2026-11-22T21:33:02.523531947Z 2026-11-22 21:33:02.523 UTC [1] LOG:  database system is ready to accept connections
+postgres-1  | 2026-11-22T21:33:10.578142465Z 2026-11-22 21:33:10.577 UTC [113] ERROR:  permission denied for table cliente
+postgres-1  | 2026-11-22T21:33:10.578167955Z 2026-11-22 21:33:10.577 UTC [113] STATEMENT:  INSERT INTO experimento.cliente VALUES (999,'Teste',NULL)
+postgres-1  | 2026-11-22T21:33:10.578785010Z 2026-11-22 21:33:10.578 UTC [113] ERROR:  permission denied for table cliente
+postgres-1  | 2026-11-22T21:33:10.578792350Z 2026-11-22 21:33:10.578 UTC [113] STATEMENT:  UPDATE experimento.cliente SET nome='Teste' WHERE id_cliente=1
+postgres-1  | 2026-11-22T21:33:10.579345613Z 2026-11-22 21:33:10.579 UTC [113] ERROR:  permission denied for table item_pedido
+postgres-1  | 2026-11-22T21:33:10.579349833Z 2026-11-22 21:33:10.579 UTC [113] STATEMENT:  DELETE FROM experimento.item_pedido WHERE id_item=1
+postgres-1  | 2026-11-22T21:33:10.579895767Z 2026-11-22 21:33:10.579 UTC [113] ERROR:  must be owner of table pedido
+postgres-1  | 2026-11-22T21:33:10.579901937Z 2026-11-22 21:33:10.579 UTC [113] STATEMENT:  ALTER TABLE experimento.pedido ADD COLUMN intrusao INTEGER

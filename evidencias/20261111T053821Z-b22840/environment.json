@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-11-11T05:38:21.618026+00:00",
+  "python": "3.12.14",
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "cpu": "",
+  "cpu_count": 9,
+  "memory_bytes": 10451427328,
+  "java": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)",
+  "ontop": "ontop version 5.5.0",
+  "jdbc": {
+    "version": "42.7.8",
+    "sha256": "2a32a9dcbc42d67a50ad3a0de5efd102c8d2be46720045f2cbd6689f160ab7c7"
+  },
+  "git_version": "git version 2.52.0",
+  "rdflib_version": "7.1.4",
+  "resources_note": "Recursos visíveis ao processo; podem refletir limites do ambiente virtual.",
+  "psycopg": "3.2.10",
+  "database": "tcc_avaliacao",
+  "runtime_mode": "native"
+}

@@ -1,0 +1,51 @@
+name: tcc-semantic-layer
+services:
+  postgres:
+    image: postgres:17.11-bookworm@sha256:665dc7b37ac52a17e298511414c21d23ffa4e6a6ef6225b3e5d59c7afb35e994
+    environment:
+      POSTGRES_USER: tcc_admin
+      POSTGRES_PASSWORD: administracao_local
+      POSTGRES_DB: tcc_demo
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/01-databases.sql:/docker-entrypoint-initdb.d/01-databases.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U tcc_admin -d tcc_demo"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  camada:
+    build: .
+    image: tcc-semantic-layer:local
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment: &connection
+      DB_HOST: postgres
+      DB_ADMIN_USER: tcc_admin
+      DB_ADMIN_PASSWORD: administracao_local
+      DB_READER_PASSWORD: somente_leitura_local
+    volumes:
+      - .:/project:ro
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      test: [CMD, python, -m, mvp, query, QC08]
+      interval: 10s
+      timeout: 25s
+      start_period: 60s
+      retries: 12
+  avaliador:
+    build: .
+    image: tcc-semantic-layer:local
+    profiles: [avaliacao]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment: *connection
+    command: [evaluate]
+    volumes:
+      - .:/project:ro
+      - ./evidencias:/project/evidencias
+volumes:
+  pgdata:

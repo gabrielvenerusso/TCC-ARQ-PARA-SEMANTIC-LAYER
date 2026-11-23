@@ -1,0 +1,3 @@
+PREFIX : <https://example.org/tcc/vendas#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?id (SUM(?q * ?v) AS ?total) WHERE { ?p a :PedidoConcluido ; :id ?id . ?i :pedido ?p ; :quantidade ?q ; :valorUnitario ?v . } GROUP BY ?id

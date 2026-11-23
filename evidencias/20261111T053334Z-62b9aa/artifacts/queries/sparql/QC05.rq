@@ -1,0 +1,3 @@
+PREFIX : <https://example.org/tcc/vendas#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?id (COUNT(?p) AS ?quantidade) WHERE { ?c a :Cliente ; :id ?id . OPTIONAL { ?p a :Pedido ; :cliente ?c . } } GROUP BY ?id

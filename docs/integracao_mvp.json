@@ -1,0 +1,35 @@
+{
+    "repository":  "gabrielvenerusso/TCC-ARQ-PARA-SEMANTIC-LAYER",
+    "base_commit":  "b77f537e1057589d8007985b281dd13a19f04b7c",
+    "source_archive":  {
+                           "filename":  "MVP_Semantic_Layer_Gabriel.zip",
+                           "sha256":  "32cd6107f390afe43ae2485479720802506c4e016e7e1151913081c15f5dbd28",
+                           "source_git_commit":  "5e7d89ae84476c8db215477ccc9fe7a48178fb42"
+                       },
+    "integration":  "Código e evidências importados do ZIP, mantendo o histórico deste repositório. O diretório .git do pacote não foi incorporado. README e regras de arquivos ignorados foram ajustados.",
+    "preserved_phase0_sha256":  {
+                                    "docs/TCC 1 - Gabriel Venerusso.docx":  "682ccfaf6bd4df8b7c68f485a5dfd158c09a61dc4b6d7168a575dad02f77c1ea",
+                                    "docs/fase0_ambiente.md":  "fec6fb5c64ee4b2b9d3986ed54100df120519f376e3822dd5683963d72f6d11f",
+                                    "docs/pendencias_capitulo4.md":  "adfc7c7e38fdf744e03723d87419a93f52b6453fcdaa41873c30a0d909084d4f",
+                                    "environment.json":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                    "results/environment/phase0-20261121T0442371275245Z/environment.json":  "897bf09e862efbf319bee8953edc7b2b134a8167ee5da225c2a4fcce3046ebdf",
+                                    "scripts/inspect_environment.ps1":  "ef95a6ca6e7cfd57b02b377b38465d3966532728b6b57d6897313f32ac305068"
+                                },
+    "preserved_linux_runs":  {
+                                 "20261111T053334Z-62b9aa":  {
+                                                                 "files":  98,
+                                                                 "manifest_sha256":  "e6a451a4b287ca34905604143c975ff477a35cd93780e8dc2e397d5f9cfe7893"
+                                                             },
+                                 "20261111T053821Z-b22840":  {
+                                                                 "files":  100,
+                                                                 "manifest_sha256":  "5ffbbae02a8c3cebb2cc2dec850acc8926cf11bd0c28872c0f97c0178608f1a7"
+                                                             }
+                             },
+    "preserved_linux_index_sha256":  "1f2e75e44657a1dcc174d6cabdd89ae6bf306b33584eb4a86dcbcba356fa9971",
+    "historical_result_note":  "Os relatórios Linux mantêm os resultados da execução original, inclusive a classificação anterior de R01. A correção desse requisito e a pendência de revisão do catálogo estão registradas no avaliador integrado e na rodada Windows.",
+    "additional_reference":  {
+                                 "filename":  "TCC_1_Gabriel_Venerusso (1).docx",
+                                 "sha256":  "c00bff36695c045c787049d6046723872ad6683f73bb68068c3ffcb1059e4c08",
+                                 "action":  "Documento de referência adicional. O documento versionado na Fase 0 foi mantido."
+                             }
+}

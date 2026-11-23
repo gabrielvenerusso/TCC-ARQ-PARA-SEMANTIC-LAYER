@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-11-22T21:33:29.980164+00:00",
+  "run_id": "20261122T213200Z-ed2a2c-windows-compose",
+  "configurations": {
+    "original": {
+      "total": 10,
+      "correct": 10,
+      "incorrect": 0,
+      "blocked": 0,
+      "error": 0
+    },
+    "incompativel": {
+      "total": 10,
+      "correct": 0,
+      "incorrect": 0,
+      "blocked": 10,
+      "error": 0
+    },
+    "corrigida": {
+      "total": 10,
+      "correct": 10,
+      "incorrect": 0,
+      "blocked": 0,
+      "error": 0
+    }
+  },
+  "attempts": 30,
+  "git": {
+    "commit": "c6822333f0ea47905c443763570665e094d4a220",
+    "dirty": false,
+    "status": ""
+  },
+  "traceability_complete": true,
+  "protocol_passed": true,
+  "human_review": "pendente_revisao_humana",
+  "scope": "Verificação técnica preliminar em domínio sintético; não é validação científica definitiva."
+}
