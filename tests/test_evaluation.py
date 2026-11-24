@@ -8,37 +8,38 @@ from mvp import __main__ as mvp
 
 
 class RequirementReviewTests(unittest.TestCase):
-    def results(self, catalog_valid=True):
+    def results(self, catalog_valid=True, **kwargs):
         stats={'original':{'correct':10},'corrigida':{'correct':10}}
         checks={'readonly':{'passed':True},'inference':{'passed':True},'data_preserved':True}
-        catalogs={'corrigida':{'valid':catalog_valid,'human_review':'pendente_revisao_humana'}}
-        return {r['id']:r for r in mvp.requirement_results(stats,checks,catalogs,True)}
+        checks['mutation']={'ontology_changed':False,'sparql_queries_changed':False}
+        catalogs={'original':{'valid':True},'corrigida':{'valid':catalog_valid}}
+        return {r['id']:r for r in mvp.requirement_results(stats,checks,catalogs,True,**kwargs)}
 
-    def test_successful_technical_checks_do_not_approve_human_reviews(self):
-        requirements=self.results()
+    def test_successful_technical_checks_do_not_replace_absent_analysis(self):
+        requirements=self.results(analysis_path=mvp.ROOT/'absent-analysis.json')
         self.assertTrue((mvp.ROOT/'docs/ARQUITETURA.md').is_file())
-        self.assertEqual(requirements['R01']['status'],'pendente_revisao_humana')
-        self.assertIn('responsabilidades e interfaces',requirements['R01']['qualification'])
-        self.assertEqual(requirements['R05']['status'],'pendente_revisao_humana')
+        self.assertEqual(requirements['R01']['status'],'não avaliado')
+        self.assertIn('responsabilidades',requirements['R01']['qualification'])
+        self.assertEqual(requirements['R05']['status'],'não avaliado')
         self.assertEqual(requirements['R05']['technical_status'],'atendido')
         for rid in ['R02','R03','R04','R06','R07']:
             self.assertEqual(requirements[rid]['status'],'atendido')
 
-    def test_invalid_catalog_is_visible_while_review_remains_pending(self):
+    def test_invalid_catalog_is_visible_with_recorded_analysis(self):
         requirement=self.results(catalog_valid=False)['R05']
-        self.assertEqual(requirement['status'],'pendente_revisao_humana')
+        self.assertEqual(requirement['status'],'não atendido')
         self.assertEqual(requirement['technical_status'],'não atendido')
 
-    def test_catalog_checks_preserve_pending_human_review(self):
+    def test_catalog_structure_does_not_claim_definition_analysis(self):
         for name in ['original','corrigido']:
             catalog=json.loads((mvp.ROOT/f'catalog/{name}.json').read_text(encoding='utf-8'))
             columns=[{'table_name':term['table'],'column_name':column}
                      for term in catalog['terms'] for column in term['columns']]
             check=mvp.catalog_check(catalog,{'columns':columns})
             self.assertTrue(check['valid'])
-            self.assertEqual(check['human_review'],'pendente_revisao_humana')
-            self.assertIsNone(catalog['review']['reviewer'])
-            self.assertIsNone(catalog['review']['reviewed_at'])
+            self.assertNotIn('human_review',check)
+            self.assertNotIn('analysis_status',check)
+            self.assertEqual(catalog['review']['record'],'docs/analises.json')
 
 
 class BlockedEvaluationTests(unittest.TestCase):
@@ -68,14 +69,16 @@ class BlockedEvaluationTests(unittest.TestCase):
             self.assertEqual(summary['git'],git)
             self.assertFalse(summary['protocol_passed'])
             requirements=json.loads((run/'requirements.json').read_text(encoding='utf-8'))
-            self.assertTrue(all(r['status']=='pendente_revisao_humana'
-                                for r in requirements if r['id'] in ['R01','R05']))
+            self.assertEqual(requirements,mvp.requirement_results(None,None,None,None))
+            self.assertTrue(all(r['status']=='não avaliado' for r in requirements if r['id']!='R01'))
+            self.assertEqual(summary['requirements']['analyses'],
+                             {r['id']:r['analysis_status'] for r in requirements if r['id'] in ['R01','R05']})
             manifest=json.loads((run/'manifest.json').read_text(encoding='utf-8'))
             for relative,digest in manifest['files_sha256'].items():
                 self.assertEqual(mvp.digest(run/relative),digest)
             self.assertIn('PostgreSQL indisponível',(run/'relatorio.html').read_text(encoding='utf-8'))
-            self.assertIn('R01: revisão das responsabilidades e interfaces pendente',(run/'relatorio.html').read_text(encoding='utf-8'))
-            self.assertIn('R05: conferência do catálogo pendente',(run/'relatorio.html').read_text(encoding='utf-8'))
+            self.assertNotIn('pendente_revisao_humana',(run/'relatorio.html').read_text(encoding='utf-8'))
+            self.assertIn('não avaliado',(run/'relatorio.html').read_text(encoding='utf-8'))
             self.assertIn('bootstrap.log',manifest['files_sha256'])
             self.assertTrue((evidence/'latest-windows.json').is_file())
             self.assertFalse((evidence/'latest.json').exists())

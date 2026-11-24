@@ -183,6 +183,10 @@ function Save-IncompleteExperiment {
             $stats[$configuration][$status] = @($selected | Where-Object { $_.status -eq $status }).Count
         }
     }
+    # Keep the script ASCII-compatible with Windows PowerShell 5.1's default decoder.
+    $notEvaluated = 'n' + [char]0x00e3 + 'o avaliado'
+    $analysisReason = 'Registro de an' + [char]0x00e1 + 'lise versionada n' + [char]0x00e3 + 'o verificado nesta etapa'
+    $analyses = [ordered]@{ R01 = $notEvaluated; R05 = $notEvaluated }
     $summary = [ordered]@{
         timestamp = [DateTimeOffset]::UtcNow.ToString('o')
         run_id = $taskRunId
@@ -195,25 +199,38 @@ function Save-IncompleteExperiment {
         execution_status = 'blocked'
         failed_phase = $Phase
         error = $ObservedError
-        human_review = 'pendente_revisao_humana'
+        analyses = $analyses
+        analysis_reason = $analysisReason
         scope = 'Incomplete Docker Compose reproduction. Planned blocked entries are not executed queries or evidence of the controlled schema change.'
     }
     $requirements = Get-Content -LiteralPath (Join-Path $taskRoot 'docs/requirements.json') -Raw -Encoding UTF8 | ConvertFrom-Json
     foreach ($requirement in $requirements) {
-        $status = if ($requirement.id -in @('R01', 'R05')) { 'pendente_revisao_humana' } else { 'nao_avaliado' }
-        $requirement | Add-Member -NotePropertyName status -NotePropertyValue $status -Force
-        $requirement | Add-Member -NotePropertyName technical_status -NotePropertyValue 'nao_avaliado' -Force
-        $requirement | Add-Member -NotePropertyName qualification -NotePropertyValue 'Execution incomplete; human review remains pending.' -Force
+        $requirement | Add-Member -NotePropertyName status -NotePropertyValue $notEvaluated -Force
+        $requirement | Add-Member -NotePropertyName technical_status -NotePropertyValue $notEvaluated -Force
+        $qualification = 'Execucao incompleta; evidencia tecnica insuficiente para avaliar o requisito.'
+        if ($requirement.id -in @('R01', 'R05')) {
+            $requirement.PSObject.Properties.Remove('review_status')
+            $requirement | Add-Member -NotePropertyName analysis_status -NotePropertyValue $notEvaluated -Force
+            $requirement | Add-Member -NotePropertyName analysis_reason -NotePropertyValue $analysisReason -Force
+            $qualification += ' ' + $analysisReason + '.'
+        }
+        $requirement | Add-Member -NotePropertyName qualification -NotePropertyValue $qualification -Force
     }
     Write-Json $recordsPath $records
     Write-Json (Join-Path $taskFolder 'summary.json') $summary
     Write-Json (Join-Path $taskFolder 'checks.json') ([ordered]@{
-        status = 'nao_avaliado'; failed_phase = $Phase; error = $ObservedError
-        architecture_review = 'pendente_revisao_humana'; catalog_review = 'pendente_revisao_humana'
+        status = $notEvaluated; failed_phase = $Phase; error = $ObservedError
+        architecture_review = $analyses.R01; catalog_review = $analyses.R05
+        analysis_reason = $analysisReason
     })
     Write-Json (Join-Path $taskFolder 'requirements.json') $requirements
     $htmlError = [Net.WebUtility]::HtmlEncode($ObservedError)
     $htmlPhase = [Net.WebUtility]::HtmlEncode($Phase)
+    $htmlAnalyses = ($requirements | Where-Object { $_.id -in @('R01', 'R05') } | ForEach-Object {
+        '<li>' + [Net.WebUtility]::HtmlEncode([string]$_.description) + ': ' +
+        [Net.WebUtility]::HtmlEncode([string]$_.analysis_status) + '. ' +
+        [Net.WebUtility]::HtmlEncode([string]$_.analysis_reason) + '.</li>'
+    }) -join "`n"
     $rows = ($records | ForEach-Object {
         '<tr><td>' + [Net.WebUtility]::HtmlEncode([string]$_.configuration) + '</td><td>' +
         [Net.WebUtility]::HtmlEncode([string]$_.question_id) + '</td><td>' +
@@ -225,7 +242,7 @@ function Save-IncompleteExperiment {
 <h1>Reproducao Docker Compose incompleta</h1><p>Rodada: <code>$taskRunId</code></p><p>Commit: <code>$($Git.commit)</code></p>
 <p>Etapa: <strong>$htmlPhase</strong></p><pre>$htmlError</pre>
 <p>As 30 posicoes planejadas foram preservadas. Registros com <code>query_executed=false</code> nao representam consultas executadas. O bloqueio de infraestrutura nao demonstra a falha controlada da configuracao incompativel.</p>
-<p>R01: revisao de responsabilidades e interfaces pendente. R05: conferencia humana do catalogo pendente.</p>
+<p>Estado das analises nesta etapa:</p><ul>$htmlAnalyses</ul>
 <p><a href="execution.json">Execucao e comandos</a> | <a href="records.json">Registros</a> | <a href="summary.json">Resumo</a> | <a href="requirements.json">Requisitos</a> | <a href="host-manifest.json">Integridade</a></p>
 <table><thead><tr><th>Configuracao</th><th>Questao</th><th>Estado</th></tr></thead><tbody>$rows</tbody></table></html>
 "@

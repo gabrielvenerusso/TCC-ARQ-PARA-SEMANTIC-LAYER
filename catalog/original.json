@@ -6,10 +6,8 @@
     "3": "cancelado"
   },
   "review": {
-    "status": "pendente_revisao_humana",
-    "reviewer": null,
-    "reviewed_at": null,
-    "note": "Os testes técnicos não substituem a revisão das definições pelo pesquisador."
+    "record": "docs/analises.json",
+    "note": "A análise das definições é registrada separadamente e aplica-se somente aos hashes indicados."
   },
   "terms": [
     {

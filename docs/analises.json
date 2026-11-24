@@ -1,0 +1,107 @@
+{
+    "schema_version":  1,
+    "scope_id":  "synthetic-sales-orders-v1",
+    "source_run":  "20261122T213200Z-ed2a2c-windows-compose",
+    "source_commit":  "c6822333f0ea47905c443763570665e094d4a220",
+    "note":  "Análise da arquitetura e das definições do domínio, registrada separadamente dos testes de funcionamento. As conclusões se aplicam somente aos arquivos identificados por SHA-256. A versão documental atual e as cópias da execução são identificadas individualmente; alterações posteriores requerem nova análise.",
+    "reading_document":  {
+                             "path":  "docs/TCC_1_Gabriel_Venerusso_Revisado.docx",
+                             "sha256":  "4481eb9b7965acf37b75ecf59d1a4130d92f85b8ea5bb8c57c69415df46e1e63"
+                         },
+    "analyses":  [
+                     {
+                         "id":  "r01-execucao",
+                         "requirement_id":  "R01",
+                         "conclusion":  "atendido",
+                         "method":  "análise da arquitetura",
+                         "scope":  "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+                         "criteria":  [
+                                          "Responsabilidades distintas para fonte relacional, ontologia, mapeamentos, mecanismo de consulta, catálogo e avaliação.",
+                                          "Interfaces descritas pelo envio de SPARQL, configuração por OWL e R2RML, acesso SQL via JDBC e retorno de resultados ou erros.",
+                                          "Fluxo entre consulta, acesso somente leitura e registro das evidências, com separação entre conceitos do domínio e estrutura física."
+                                      ],
+                         "files_sha256":  {
+                                              "docs/ARQUITETURA.md":  "9aa621b46bbc2c390af7ed63a455ba04c86aa5274aa8f5c900f46eba7481b102"
+                                          },
+                         "artifact_locations":  {
+                                                    "docs/ARQUITETURA.md":  "evidencias/20261122T213200Z-ed2a2c-windows-compose/artifacts/docs/ARQUITETURA.md"
+                                                },
+                         "versions":  {
+                                          "variant":  "execucao"
+                                      }
+                     },
+                     {
+                         "id":  "r05-execucao",
+                         "requirement_id":  "R05",
+                         "conclusion":  "atendido",
+                         "method":  "definições do domínio",
+                         "scope":  "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+                         "criteria":  [
+                                          "Termos Cliente, Produto, Pedido, ItemPedido e PedidoConcluido com definições, sinônimos e correspondências físicas explícitas.",
+                                          "Situações aberto, concluído e cancelado; PedidoConcluido associado ao código 2 e à hierarquia de Pedido.",
+                                          "Relações N:1 de pedido para cliente, item para pedido e item para produto; linhas de itens repetidos preservadas.",
+                                          "Total do pedido definido pela soma de quantidade multiplicada pelo valor unitário, na granularidade de pedido e unidade BRL; exclusão explícita de frete, tributos, descontos e devoluções.",
+                                          "Correspondência física nas versões original e corrigida do catálogo; cidade opcional e limites de cobertura definidos. A validade estrutural é verificada separadamente contra os metadados."
+                                      ],
+                         "files_sha256":  {
+                                              "catalog/original.json":  "681c84c8b4e3741a5612b8b1a7fbcd9d315726f346f90d42fe0ce6746caf1fd2",
+                                              "catalog/corrigido.json":  "cb206fc1c5c32c5de1cbd137560c1c57a0a67b2f3e303dd19bd101221c5970af"
+                                          },
+                         "artifact_locations":  {
+                                                    "catalog/original.json":  "evidencias/20261122T213200Z-ed2a2c-windows-compose/artifacts/catalog/original.json",
+                                                    "catalog/corrigido.json":  "evidencias/20261122T213200Z-ed2a2c-windows-compose/artifacts/catalog/corrigido.json"
+                                                },
+                         "versions":  {
+                                          "original":  "1.0.0",
+                                          "corrigido":  "1.1.0"
+                                      }
+                     },
+                     {
+                         "id":  "r01-documentacao",
+                         "requirement_id":  "R01",
+                         "conclusion":  "atendido",
+                         "method":  "análise da arquitetura",
+                         "scope":  "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+                         "criteria":  [
+                                          "Responsabilidades distintas para fonte relacional, ontologia, mapeamentos, mecanismo de consulta, catálogo e avaliação.",
+                                          "Interfaces descritas pelo envio de SPARQL, configuração por OWL e R2RML, acesso SQL via JDBC e retorno de resultados ou erros.",
+                                          "Fluxo entre consulta, acesso somente leitura e registro das evidências, com separação entre conceitos do domínio e estrutura física."
+                                      ],
+                         "files_sha256":  {
+                                              "docs/ARQUITETURA.md":  "732bbdcdf4f2547b32ad338713bd9b9280084446fa2673089e8ec88270afb1e6"
+                                          },
+                         "artifact_locations":  {
+                                                    "docs/ARQUITETURA.md":  "docs/ARQUITETURA.md"
+                                                },
+                         "versions":  {
+                                          "variant":  "documentacao"
+                                      }
+                     },
+                     {
+                         "id":  "r05-documentacao",
+                         "requirement_id":  "R05",
+                         "conclusion":  "atendido",
+                         "method":  "definições do domínio",
+                         "scope":  "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+                         "criteria":  [
+                                          "Termos Cliente, Produto, Pedido, ItemPedido e PedidoConcluido com definições, sinônimos e correspondências físicas explícitas.",
+                                          "Situações aberto, concluído e cancelado; PedidoConcluido associado ao código 2 e à hierarquia de Pedido.",
+                                          "Relações N:1 de pedido para cliente, item para pedido e item para produto; linhas de itens repetidos preservadas.",
+                                          "Total do pedido definido pela soma de quantidade multiplicada pelo valor unitário, na granularidade de pedido e unidade BRL; exclusão explícita de frete, tributos, descontos e devoluções.",
+                                          "Correspondência física nas versões original e corrigida do catálogo; cidade opcional e limites de cobertura definidos. A validade estrutural é verificada separadamente contra os metadados."
+                                      ],
+                         "files_sha256":  {
+                                              "catalog/original.json":  "1848ea03b7ecb4eab2e137a9c5dd3c403cbe6868b18669a6adae980b178a802e",
+                                              "catalog/corrigido.json":  "7e35f464b3289221fb60cfaf6547d2547465ba30183fab4652a400ed648cb91d"
+                                          },
+                         "artifact_locations":  {
+                                                    "catalog/original.json":  "catalog/original.json",
+                                                    "catalog/corrigido.json":  "catalog/corrigido.json"
+                                                },
+                         "versions":  {
+                                          "original":  "1.0.0",
+                                          "corrigido":  "1.1.0"
+                                      }
+                     }
+                 ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "R01",
+    "description": "Descrever componentes e interfaces",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Análise da arquitetura: responsabilidades dos componentes e interfaces de entrada, saída e comunicação descritas de forma coerente",
+    "expected_evidence": "docs/ARQUITETURA.md e análise da versão correspondente, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "docs/analises.json"
+  },
+  {
+    "id": "R02",
+    "description": "Relacionar conceitos e dados",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Relacionar conceitos e dados",
+    "expected_evidence": "mappings/original.ttl"
+  },
+  {
+    "id": "R03",
+    "description": "Restringir acesso a leitura",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Restringir acesso a leitura",
+    "expected_evidence": "checks.json:readonly"
+  },
+  {
+    "id": "R04",
+    "description": "Responder consultas SPARQL e inferir subclasses",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Responder consultas SPARQL e inferir subclasses",
+    "expected_evidence": "records.json e checks.json:inference"
+  },
+  {
+    "id": "R05",
+    "description": "Disponibilizar metadados e definições",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Análise das definições do domínio: termos, sinônimos, relações, fórmula, granularidade e limites da medida; validade estrutural do catálogo nas configurações original e corrigida",
+    "expected_evidence": "metadata.json, checks.json:catalog, catalog/original.json e catalog/corrigido.json; análise das versões correspondentes, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "docs/analises.json"
+  },
+  {
+    "id": "R06",
+    "description": "Rastrear tentativas, artefatos e versões",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Rastrear tentativas, artefatos e versões",
+    "expected_evidence": "manifest.json e records.json"
+  },
+  {
+    "id": "R07",
+    "description": "Adaptar mudança física sem alterar ontologia e consultas",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Adaptar mudança física sem alterar ontologia e consultas",
+    "expected_evidence": "mutation.json e summary.json"
+  }
+]

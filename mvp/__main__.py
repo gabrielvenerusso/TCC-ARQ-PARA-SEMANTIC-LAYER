@@ -27,6 +27,8 @@ import psycopg
 from psycopg import sql
 from psycopg.rows import dict_row
 from rdflib import Graph, Namespace
+from mvp.analysis import requirement_results as analyze_requirements, summarize_requirements
+from mvp.reporting import render_report
 
 ROOT = Path(__file__).resolve().parent.parent
 XSD = 'http://www.w3.org/2001/XMLSchema#'
@@ -120,8 +122,7 @@ def metadata(db):
 def catalog_check(cat, meta):
     available={(c['table_name'],c['column_name']) for c in meta['columns']}
     missing=sorted({f"{t['table']}.{col}" for t in cat['terms'] for col in t['columns'] if (t['table'],col) not in available})
-    return {'valid': not missing, 'missing_columns': missing,
-            'human_review': cat['review']['status']}
+    return {'valid': not missing, 'missing_columns': missing}
 
 
 def normalize(value, datatype):
@@ -293,26 +294,8 @@ def mutation_details():
             'note':'As versões antiga e nova são preservadas em arquivos distintos; atualização manual.'}
 
 
-def requirement_results(stats, checks, catalogs, trace):
-    """Technical evidence does not approve the researcher's qualitative reviews."""
-    requirements=json.loads((ROOT/'docs/requirements.json').read_text(encoding='utf-8'))
-    technical={'R02':stats['original']['correct']==10,'R03':checks['readonly']['passed'],
-        'R04':checks['inference']['passed'] and stats['corrigida']['correct']==10,
-        'R05':catalogs['corrigida']['valid'],'R06':trace,
-        'R07':checks['data_preserved'] and stats['corrigida']['correct']==10}
-    for requirement in requirements:
-        rid=requirement['id']
-        requirement['technical_status']=(
-            'não aplicável' if rid=='R01' else 'atendido' if technical[rid] else 'não atendido')
-        requirement['status']=requirement['technical_status']
-        requirement['qualification']='Resultado técnico preliminar; revisão qualitativa pelo pesquisador pendente.'
-        if rid=='R01':
-            requirement['status']='pendente_revisao_humana'
-            requirement['qualification']='A existência do documento não comprova a revisão das responsabilidades e interfaces pelo pesquisador.'
-        elif rid=='R05':
-            requirement['status']='pendente_revisao_humana'
-            requirement['qualification']='A verificação estrutural do catálogo não substitui a conferência das definições pelo pesquisador.'
-    return requirements
+def requirement_results(stats, checks, catalogs, trace, **kwargs):
+    return analyze_requirements(stats, checks, catalogs, trace, root=ROOT, **kwargs)
 
 
 def evidence_filename(value, variable):
@@ -322,8 +305,11 @@ def evidence_filename(value, variable):
 
 
 def save_run(folder, git, summary, records, requirements):
+    summary['requirements']=summarize_requirements(requirements)
     dump(folder/'requirements.json',requirements);dump(folder/'summary.json',summary)
-    render_report(folder,summary,records)
+    mutation_path=folder/'mutation.json'
+    mutation=json.loads(mutation_path.read_text(encoding='utf-8')) if mutation_path.is_file() else None
+    render_report(folder,summary,records,requirements,mutation=mutation)
     files={str(p.relative_to(folder)):digest(p) for p in sorted(folder.rglob('*')) if p.is_file()}
     dump(folder/'manifest.json',{'run_id':folder.name,'git':git,'files_sha256':files})
     latest=evidence_filename(os.getenv('EVIDENCE_LATEST_FILE','latest.json'),'EVIDENCE_LATEST_FILE')
@@ -342,6 +328,14 @@ def verify_evidence(folder):
             files.add(relative)
             if not (folder/relative).is_file() or digest(folder/relative)!=expected:
                 invalid.add(relative)
+    source=manifest.get('source') if len(manifests)==1 else None
+    if source:
+        for relative,expected in source['files_sha256'].items():
+            path=folder/source['path']/relative
+            key='source/'+relative
+            files.add(key)
+            if not path.is_file() or digest(path)!=expected:
+                invalid.add(key)
     return {'files':len(files),'invalid':sorted(invalid),'valid':not invalid,'manifests':manifests}
 
 
@@ -357,27 +351,16 @@ def blocked_bootstrap(folder, git, questions, error):
         for configuration in ['original','incompativel','corrigida'] for q in questions]
     dump(folder/'records.json',records)
     dump(folder/'checks.json',{'status':'not_executed','phase':'bootstrap','error':message})
-    requirements=json.loads((ROOT/'docs/requirements.json').read_text(encoding='utf-8'))
-    for requirement in requirements:
-        requirement['technical_status']='não executado'
-        requirement['status']=('pendente_revisao_humana' if requirement['id'] in ['R01','R05'] else 'não avaliado')
-        requirement['qualification']='Preparação do banco bloqueada; nenhuma consulta executada. Revisões humanas continuam pendentes.'
+    requirements=requirement_results(None,None,None,None)
     summary={'timestamp':now(),'run_id':folder.name,'configurations':{
         name:{'total':len(questions),'correct':0,'incorrect':0,'blocked':len(questions),'error':0}
         for name in ['original','incompativel','corrigida']},'attempts':len(records),
         'queries_executed':0,'git':git,'traceability_complete':False,'protocol_passed':False,
-        'human_review':'pendente_revisao_humana','phase':'bootstrap','error':message,
+        'phase':'bootstrap','error':message,
         'scope':'Rodada bloqueada antes das consultas; registros representam tentativas planejadas.'}
     save_run(folder,git,summary,records,requirements)
     print(f'Bloqueio na preparação do banco: {message}\nRelatório: {folder / "relatorio.html"}',flush=True)
     return 2
-
-
-def render_report(folder, summary, records):
-    esc=lambda s:html.escape(str(s))
-    rows=''.join(f'<tr><td>{esc(r["configuration"])}</td><td>{esc(r["question_id"])}</td><td>{esc(r["status"])}</td><td>{esc(r.get("error", ""))}</td></tr>' for r in records)
-    cards=''.join(f'<div class="card"><b>{esc(k)}</b><strong>{v["correct"]}/{v["total"]}</strong><span>respostas corretas · {v["blocked"]} bloqueadas</span></div>' for k,v in summary['configurations'].items())
-    (folder/'relatorio.html').write_text(f'''<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Avaliação — camada semântica</title><style>body{{font:16px system-ui;background:#f3f6fa;color:#14273d;margin:0}}main{{max-width:1100px;margin:auto;padding:40px 24px}}h1{{font-size:32px}}.cards{{display:flex;gap:16px;flex-wrap:wrap}}.card{{background:white;padding:24px;border-radius:12px;flex:1;min-width:220px}}strong{{display:block;font-size:40px;color:#135e76;margin:12px 0}}span{{font-size:14px}}table{{border-collapse:collapse;width:100%;background:white}}th,td{{padding:12px;text-align:left;border-bottom:1px solid #dde4eb}}td:last-child{{font-size:13px}}code{{overflow-wrap:anywhere}}a{{color:#135e76}}.note{{border-left:4px solid #d89221;padding:16px;background:#fff5df}}</style><main><p>TCC · DOMÍNIO SINTÉTICO DE PEDIDOS</p><h1>Camada semântica: resultados da avaliação</h1><p>Rodada <code>{esc(folder.name)}</code> · {esc(summary['timestamp'])}</p><div class="cards">{cards}</div><p class="note">A configuração incompatível contém uma falha deliberada. Bloqueios são mantidos no denominador. Esta avaliação técnica não mede desempenho em produção nem substitui revisão humana das definições.</p><p class="note"><b>Revisões humanas:</b> R01: revisão das responsabilidades e interfaces pendente. R05: conferência do catálogo pendente. O resultado técnico não aprova essas revisões.</p><p>Veredito do protocolo técnico: <b>{esc(summary['protocol_passed'])}</b> · Rastreabilidade completa: <b>{esc(summary['traceability_complete'])}</b> · Commit: <code>{esc(summary['git']['commit'])}</code></p><p><a href="summary.json">Resumo JSON</a> · <a href="checks.json">Verificações</a> · <a href="manifest.json">Manifesto e hashes</a> · <a href="records.json">Registros completos</a> · <a href="requirements.json">Matriz de requisitos</a></p><h2>As 30 tentativas</h2><table><thead><tr><th>Configuração</th><th>Questão</th><th>Resultado</th><th>Observação</th></tr></thead><tbody>{rows}</tbody></table></main></html>''',encoding='utf-8')
 
 
 def evaluate():
@@ -458,7 +441,8 @@ def evaluate():
                              'passed':raw.get('boolean') is False and any(r['configuration']=='corrigida' and r['question_id']=='QC08' and r['status']=='correct' for r in records)}
     checks['catalog']=catalogs
     checks['data_preserved']=len(set(fingerprints))==1
-    dump(folder/'checks.json',checks);dump(folder/'mutation.json',mutation_details())
+    checks['mutation']=mutation_details()
+    dump(folder/'checks.json',checks);dump(folder/'mutation.json',checks['mutation'])
     files={str(p.relative_to(folder)):digest(p) for p in sorted(folder.rglob('*')) if p.is_file()}
     trace=bool(git['commit']) and not git['dirty'] and len(records)==30 and all(
         all(path in files for path in [r['expected'],r['startup_log'],*r['artifacts'].values()]) and
@@ -471,7 +455,7 @@ def evaluate():
             catalogs['original']['valid'] and not catalogs['incompativel']['valid'] and catalogs['corrigida']['valid'])
     summary={'timestamp':now(),'run_id':run_id,'configurations':stats,'attempts':30,
              'git':git,'traceability_complete':trace,'protocol_passed':passed,
-             'human_review':'pendente_revisao_humana','scope':'Verificação técnica preliminar em domínio sintético; não é validação científica definitiva.'}
+             'scope':'Avaliação de funcionamento e análise dos componentes no cenário sintético.'}
     requirements=requirement_results(stats,checks,catalogs,trace)
     save_run(folder,git,summary,records,requirements)
     print(f'Relatório: {folder / "relatorio.html"}\nProtocolo atendido: {passed}',flush=True)
@@ -493,11 +477,18 @@ def serve():
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['serve','evaluate','list','query','verify'])
+    parser.add_argument('command',choices=['serve','evaluate','list','query','verify','analyze'])
     parser.add_argument('question',nargs='?',help='QC01 ... QC10 (comando query)')
+    parser.add_argument('--output',help='Nova pasta para a análise documental, fora das evidências originais.')
     args=parser.parse_args()
     if args.command=='serve':serve();return 0
     if args.command=='evaluate':return evaluate()
+    if args.command=='analyze':
+        if not args.question or not args.output:parser.error('Informe a pasta da execução e --output com uma pasta nova.')
+        from mvp.final_analysis import analyze_run
+        analyze_run(args.question,args.output,root=ROOT)
+        print(f'Relatório documental: {Path(args.output)/"relatorio.html"}; nenhuma consulta executada.')
+        return 0
     if args.command=='verify':
         if not args.question:parser.error('Informe a pasta da rodada em evidencias/.')
         result=verify_evidence(args.question)

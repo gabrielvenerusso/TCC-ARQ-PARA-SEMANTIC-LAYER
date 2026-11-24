@@ -3,4 +3,6 @@
 *.pdf binary
 # Preserve original evidence bytes, including line endings.
 /evidencias/** -text
+# Preserve the bytes of the separate documentary analysis and its manifests.
+/docs/analise-final/** -text
 *.docx binary

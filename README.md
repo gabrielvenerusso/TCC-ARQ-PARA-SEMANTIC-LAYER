@@ -5,6 +5,11 @@ sintéticos. A camada semântica usa PostgreSQL, catálogo, ontologia OWL, mapea
 R2RML e Ontop. A avaliação compara dez questões de competência em três
 configurações e gera registros JSON e um relatório HTML.
 
+O [relatório final](docs/analise-final/relatorio.html) reúne os resultados da
+execução documentada e a análise do atendimento aos requisitos. A análise final
+foi registrada separadamente, sem repetir as consultas ou alterar as evidências
+da execução original.
+
 ## Executar no Windows
 
 Requisitos: Git, PowerShell 5.1 ou superior e Docker Desktop iniciado com WSL 2 e
@@ -38,49 +43,82 @@ questões não executadas ficam marcadas com `query_executed: false`.
 
 ## Abrir o relatório
 
+Abra o [relatório final](docs/analise-final/relatorio.html) diretamente no navegador:
+
 ```powershell
+Start-Process '.\docs\analise-final\relatorio.html'
+```
+
+O relatório apresenta os resultados, a explicação dos bloqueios, o atendimento
+aos requisitos e as limitações. Os registros técnicos vinculam a análise à
+execução original e preservam versões e informações de integridade.
+
+Para conferir os arquivos da análise e da execução documentada:
+
+```powershell
+python -m mvp verify docs/analise-final
 $rodada = (Get-Content .\evidencias\latest-windows.json -Raw -Encoding UTF8 | ConvertFrom-Json).run_id
-Start-Process ".\evidencias\$rodada\relatorio.html"
-docker compose run --rm --no-deps avaliador verify "evidencias/$rodada"
+python -m mvp verify "evidencias/$rodada"
 ```
 
 `latest-windows.json` aponta para a última rodada, inclusive em caso de bloqueio.
 O comando `verify` confere os manifestos da avaliação e dos registros do Windows.
-O HTML também pode ser aberto diretamente, sem Docker. A verificação pelo
-contêiner depende da construção da imagem.
+Os comandos Python exigem as dependências de `requirements.txt`. Também podem ser
+executados no contêiner com `docker compose run --rm --no-deps avaliador verify`
+seguido da pasta desejada, após construir a imagem atual.
+
+Para produzir outra análise documental a partir de uma execução existente, use
+uma pasta de saída nova:
+
+```powershell
+python -m mvp analyze "evidencias/$rodada" --output docs/nova-analise
+```
+
+Esse comando lê os registros existentes e as análises das versões correspondentes;
+não inicia o banco nem executa consultas. A pasta da execução original permanece
+preservada.
 
 ## Resultados registrados
 
-A rodada de 22/11/2026,
-[`20261122T213200Z-ed2a2c-windows-compose`](evidencias/20261122T213200Z-ed2a2c-windows-compose/relatorio.html),
-foi executada com PowerShell 5.1 no Windows e Docker Desktop/WSL 2, sobre o commit
-`c6822333f0ea47905c443763570665e094d4a220`, com árvore limpa.
+A [execução documentada de 22/11/2026](evidencias/20261122T213200Z-ed2a2c-windows-compose/relatorio.html)
+foi realizada no Windows com PowerShell e Docker Desktop/WSL 2. As respostas das
+dez questões de competência foram comparadas com referências SQL obtidas antes
+da alteração do esquema.
 
 Os **15 testes passaram**. As **30 tentativas** tiveram os seguintes resultados:
 
 | Configuração | Intervenção | Resultado observado |
 |---|---|---|
-| A — `original` | Esquema e artefatos originais | 10 respostas corretas |
-| B — `incompativel` | Renomeação de `cod_situacao` para `situacao_id`, com mapeamento e catálogo antigos | 10 bloqueios na inicialização do Ontop |
-| C — `corrigida` | Mapeamento e catálogo atualizados | 10 respostas corretas |
+| A | Esquema e artefatos originais | 10 respostas corretas em 10 questões |
+| B | Coluna renomeada, com mapeamento e catálogo antigos | 10 tentativas bloqueadas na inicialização do Ontop |
+| C | Mapeamento e catálogo corrigidos | 10 respostas corretas em 10 questões |
 
-O bloqueio de B era previsto: o mapeamento ainda referenciava `cod_situacao`.
-A ontologia e as consultas permaneceram iguais nas três configurações. Também
-passaram o controle de inferência, as restrições de escrita e a verificação de
-preservação dos dados. Os 130 arquivos referenciados pelos manifestos foram
-verificados sem divergências.
+O bloqueio de B ocorreu porque o mapeamento ainda referenciava o nome antigo da
+coluna. As consultas dessa configuração não chegaram a ser executadas. A correção
+alterou três regras de mapeamento e a correspondência física do catálogo. A
+ontologia e as consultas SPARQL permaneceram iguais nas três configurações.
+Também passaram o controle de inferência, as restrições de escrita e a verificação
+de preservação dos dados. As 30 tentativas possuem rastreabilidade. Os 130 arquivos
+referenciados pelos manifestos foram verificados sem divergências.
 
 Detalhes: [resumo](evidencias/20261122T213200Z-ed2a2c-windows-compose/summary.json),
 [log dos testes](evidencias/20261122T213200Z-ed2a2c-windows-compose/logs/05-tests.stderr.log),
 [comandos executados](evidencias/20261122T213200Z-ed2a2c-windows-compose/execution.json) e
 [auditoria de preservação](evidencias/20261122T213200Z-ed2a2c-windows-compose/preservation-audit.json).
 
-### Revisões pendentes
+### Atendimento aos requisitos
 
-R01 depende da revisão das responsabilidades e interfaces descritas em
-`docs/ARQUITETURA.md`. A revisão do catálogo depende da conferência do autor sobre
-termos, métricas e relações. Ambas permanecem pendentes: a presença do documento
-e a validação das colunas do catálogo não concluem essas revisões.
+Os sete requisitos foram considerados atendidos no cenário sintético. A análise
+da arquitetura examina as responsabilidades dos componentes e suas interfaces.
+A análise das definições do domínio examina os termos, as relações e a fórmula
+do total do pedido. Esses exames são distintos dos testes de funcionamento.
+
+Os critérios e arquivos constam na [matriz de requisitos](docs/requirements.json)
+e no [registro de análises](docs/analises.json). Cada conclusão se aplica somente
+aos arquivos com os hashes registrados. Alterações exigem nova análise da versão
+correspondente; a ausência de análise suficiente mantém o requisito não avaliado.
+Para o catálogo, uma falha estrutural continua a impedir o atendimento mesmo
+quando suas definições já foram analisadas.
 
 O avaliador mantém bloqueios e erros no total de 30 tentativas. O controle
 negativo de QC08 é adicional: remove apenas os axiomas de subclasse e deve
@@ -133,13 +171,19 @@ interface usa somente o loopback.
 | `expected/*.json` | Respostas SQL obtidas antes da alteração física |
 | `original/`, `incompativel/`, `corrigida/` | Metadados, respostas e logs do Ontop |
 | `checks.json`, `mutation.json` | Verificações e descrição da alteração física |
-| `requirements.json` | Requisitos, situação técnica e revisões pendentes |
+| `requirements.json` | Situação dos requisitos registrada naquela execução |
 | `artifacts/` | Cópias dos artefatos avaliados |
 | `manifest.json`, `host-manifest.json` | Commit e hashes para conferência da integridade |
 | `environment.json` | Versões e recursos do ambiente |
 
 Arquivos de etapas não alcançadas não são gerados. Um bloqueio anterior à
 preparação do banco, por exemplo, não produz respostas SQL ou SPARQL.
+
+A pasta `docs/analise-final/` contém a análise final em arquivos separados. Seu
+`source.json` identifica a execução original; `summary.json` e `requirements.json`
+apresentam a consolidação; `manifest.json` permite conferir a integridade. Os
+registros históricos mantêm a situação dos requisitos que havia sido registrada
+na época.
 
 ## Histórico e documentação
 
@@ -148,12 +192,18 @@ O MVP de `MVP_Semantic_Layer_Gabriel.zip` foi integrado a
 preservando o histórico do repositório. Os hashes do pacote e dos arquivos
 preservados constam no [registro da integração](docs/integracao_mvp.json).
 
-A Fase 0 registra o ambiente anterior à integração. Seus arquivos e o documento
-`docs/TCC 1 - Gabriel Venerusso.docx` permanecem inalterados:
+A Fase 0 registra o ambiente anterior à integração. Seus diagnósticos e pendências
+são documentos históricos e não descrevem a situação atual do MVP. Esses arquivos
+permanecem inalterados:
 
 - [Inventário](environment.json) e [instantâneo original](results/environment/phase0-20261121T0442371275245Z/environment.json)
-- [Diagnóstico e fontes oficiais](docs/fase0_ambiente.md)
-- [Pendências do capítulo registradas na Fase 0](docs/pendencias_capitulo4.md)
+- [Diagnóstico histórico e fontes oficiais — Fase 0](docs/fase0_ambiente.md)
+- [Pendências históricas do capítulo — Fase 0](docs/pendencias_capitulo4.md)
+
+A [cópia de leitura do TCC revisado](docs/TCC_1_Gabriel_Venerusso_Revisado.docx)
+reproduz integralmente o DOCX fornecido. O documento anterior em
+`docs/TCC 1 - Gabriel Venerusso.docx` e as cópias preservadas nas evidências
+permanecem como registros históricos.
 
 As rodadas Linux
 [20261111T053334Z-62b9aa](evidencias/20261111T053334Z-62b9aa/relatorio.html) e
@@ -161,8 +211,9 @@ As rodadas Linux
 foram preservadas com seus commits de origem, relatórios e avaliações antigas de
 requisitos. Ambas registram 10 respostas corretas em A, 10 bloqueios em B e 10
 respostas corretas em C, em execução nativa Linux. O índice `evidencias/latest.json`
-também foi preservado. A correção de R01 aplica-se ao avaliador integrado e às
-novas rodadas, sem alterar os registros anteriores.
+também foi preservado. A análise final está vinculada à execução Windows e às
+versões explicitamente examinadas, sem alterar as avaliações históricas ou
+transferir automaticamente suas conclusões a versões posteriores.
 
 Para coletar outro inventário do Windows:
 
@@ -178,6 +229,6 @@ Consulte a [arquitetura](docs/ARQUITETURA.md), o [roteiro de demonstração](doc
 as [questões de competência](queries/questions.json) e a [análise do Auto-Ontology](docs/NVIDIA_AUTO_ONTOLOGY.md).
 O domínio contém 10 clientes, 10 produtos, 30 pedidos e 60 itens sintéticos.
 As consultas são predefinidas; não há geração automática de ontologia ou consultas
-por modelos de linguagem. Os tempos registrados são diagnósticos, não um
-benchmark de produção. A redação do Capítulo 4 e a revisão qualitativa pelo autor
-permanecem pendentes.
+por modelos de linguagem. O pequeno volume de dados, o domínio sintético e o
+estudo de uma única alteração de esquema limitam os resultados. Não houve
+avaliação em produção; os tempos registrados servem ao diagnóstico da execução.

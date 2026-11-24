@@ -3,9 +3,9 @@
     "id": "R01",
     "description": "Descrever componentes e interfaces",
     "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
-    "criterion": "Revisão pelo pesquisador das responsabilidades dos componentes e de suas interfaces",
-    "expected_evidence": "docs/ARQUITETURA.md e registro da revisão humana",
-    "review_status": "pendente_revisao_humana"
+    "criterion": "Análise da arquitetura: responsabilidades dos componentes e interfaces de entrada, saída e comunicação descritas de forma coerente",
+    "expected_evidence": "docs/ARQUITETURA.md e análise da versão correspondente, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "docs/analises.json"
   },
   {
     "id": "R02",
@@ -32,9 +32,9 @@
     "id": "R05",
     "description": "Disponibilizar metadados e definições",
     "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
-    "criterion": "Disponibilizar metadados e definições; conferência do catálogo pelo pesquisador",
-    "expected_evidence": "metadata.json e catalog/*.json; registro da conferência humana",
-    "review_status": "pendente_revisao_humana"
+    "criterion": "Análise das definições do domínio: termos, sinônimos, relações, fórmula, granularidade e limites da medida; validade estrutural do catálogo nas configurações original e corrigida",
+    "expected_evidence": "metadata.json, checks.json:catalog, catalog/original.json e catalog/corrigido.json; análise das versões correspondentes, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "docs/analises.json"
   },
   {
     "id": "R06",

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "R01",
+    "description": "Descrever componentes e interfaces",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Análise da arquitetura: responsabilidades dos componentes e interfaces de entrada, saída e comunicação descritas de forma coerente",
+    "expected_evidence": "docs/ARQUITETURA.md e análise da versão correspondente, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "r01-execucao",
+    "technical_status": "não aplicável",
+    "status": "atendido",
+    "analysis_status": "atendido",
+    "analysis_files_sha256": {
+      "docs/ARQUITETURA.md": "9aa621b46bbc2c390af7ed63a455ba04c86aa5274aa8f5c900f46eba7481b102"
+    },
+    "analysis_registry_sha256": "26581c4a4bfe1ca115b276c27dd776ab76c4969686255e14ecaeaf5390959287",
+    "analysis_method": "análise da arquitetura",
+    "analysis_scope": "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+    "analysis_criteria": [
+      "Responsabilidades distintas para fonte relacional, ontologia, mapeamentos, mecanismo de consulta, catálogo e avaliação.",
+      "Interfaces descritas pelo envio de SPARQL, configuração por OWL e R2RML, acesso SQL via JDBC e retorno de resultados ou erros.",
+      "Fluxo entre consulta, acesso somente leitura e registro das evidências, com separação entre conceitos do domínio e estrutura física."
+    ],
+    "analysis_reason": "Análise registrada para os hashes exatos dos arquivos considerados.",
+    "qualification": "Análise da arquitetura: responsabilidades dos componentes e interfaces. Análise registrada para os hashes exatos dos arquivos considerados."
+  },
+  {
+    "id": "R02",
+    "description": "Relacionar conceitos e dados",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Relacionar conceitos e dados",
+    "expected_evidence": "mappings/original.ttl",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "As dez respostas da configuração original correspondem às referências SQL, com conceitos associados aos dados pelos mapeamentos."
+  },
+  {
+    "id": "R03",
+    "description": "Restringir acesso a leitura",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Restringir acesso a leitura",
+    "expected_evidence": "checks.json:readonly",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "A leitura foi permitida; inserção, atualização, exclusão e alteração de estrutura foram bloqueadas."
+  },
+  {
+    "id": "R04",
+    "description": "Responder consultas SPARQL e inferir subclasses",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Responder consultas SPARQL e inferir subclasses",
+    "expected_evidence": "records.json e checks.json:inference",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "As respostas da configuração corrigida correspondem às referências SQL; o controle sem hierarquia confirmou o efeito da inferência."
+  },
+  {
+    "id": "R05",
+    "description": "Disponibilizar metadados e definições",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Análise das definições do domínio: termos, sinônimos, relações, fórmula, granularidade e limites da medida; validade estrutural do catálogo nas configurações original e corrigida",
+    "expected_evidence": "metadata.json, checks.json:catalog, catalog/original.json e catalog/corrigido.json; análise das versões correspondentes, vinculada por SHA-256 em docs/analises.json",
+    "analysis_record": "r05-execucao",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "analysis_status": "atendido",
+    "analysis_files_sha256": {
+      "catalog/corrigido.json": "cb206fc1c5c32c5de1cbd137560c1c57a0a67b2f3e303dd19bd101221c5970af",
+      "catalog/original.json": "681c84c8b4e3741a5612b8b1a7fbcd9d315726f346f90d42fe0ce6746caf1fd2"
+    },
+    "analysis_registry_sha256": "26581c4a4bfe1ca115b276c27dd776ab76c4969686255e14ecaeaf5390959287",
+    "analysis_method": "definições do domínio",
+    "analysis_scope": "Cenário sintético de pedidos de venda, com pequeno volume de dados e uma renomeação de coluna; sem avaliação em produção.",
+    "analysis_criteria": [
+      "Termos Cliente, Produto, Pedido, ItemPedido e PedidoConcluido com definições, sinônimos e correspondências físicas explícitas.",
+      "Situações aberto, concluído e cancelado; PedidoConcluido associado ao código 2 e à hierarquia de Pedido.",
+      "Relações N:1 de pedido para cliente, item para pedido e item para produto; linhas de itens repetidos preservadas.",
+      "Total do pedido definido pela soma de quantidade multiplicada pelo valor unitário, na granularidade de pedido e unidade BRL; exclusão explícita de frete, tributos, descontos e devoluções.",
+      "Correspondência física nas versões original e corrigida do catálogo; cidade opcional e limites de cobertura definidos. A validade estrutural é verificada separadamente contra os metadados."
+    ],
+    "analysis_reason": "Análise registrada para os hashes exatos dos arquivos considerados.",
+    "qualification": "Definições do domínio: atendido. Validade estrutural do catálogo nas configurações original e corrigida: atendido. Análise registrada para os hashes exatos dos arquivos considerados."
+  },
+  {
+    "id": "R06",
+    "description": "Rastrear tentativas, artefatos e versões",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Rastrear tentativas, artefatos e versões",
+    "expected_evidence": "manifest.json e records.json",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "As tentativas remetem à configuração, aos arquivos utilizados e ao resultado ou erro registrado."
+  },
+  {
+    "id": "R07",
+    "description": "Adaptar mudança física sem alterar ontologia e consultas",
+    "origin": "Objetivo e protocolo do TCC; definido antes da avaliação",
+    "criterion": "Adaptar mudança física sem alterar ontologia e consultas",
+    "expected_evidence": "mutation.json e summary.json",
+    "technical_status": "atendido",
+    "status": "atendido",
+    "qualification": "A correção recuperou as dez respostas, preservando os dados, a ontologia e as consultas SPARQL."
+  }
+]

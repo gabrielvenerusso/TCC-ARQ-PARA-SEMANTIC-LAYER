@@ -39,10 +39,20 @@ O banco `tcc_demo` serve à demonstração. A avaliação recria somente o esque
 
 Cada tentativa registra a questão, a configuração, o resultado ou erro, o horário, o commit e os artefatos utilizados. O manifesto reúne os hashes dos arquivos. Os metadados de cada etapa incluem colunas, tipos e restrições PK/FK. A rastreabilidade é feita por consulta e arquivo; a SQL interna gerada pelo Ontop e a origem de cada célula não são coletadas nesta versão.
 
+## Análise da arquitetura e das definições do domínio
+
+A análise da arquitetura considera a atribuição de responsabilidades aos seis componentes e a descrição de suas interfaces. A fonte relacional armazena os dados e suas restrições; a ontologia define o vocabulário e a hierarquia; os mapeamentos relacionam esse vocabulário às estruturas físicas; o Ontop recebe SPARQL e acessa o banco por SQL via JDBC; o catálogo reúne as definições e correspondências; o avaliador compara respostas e registra as evidências. O diagrama explicita as entradas, as saídas e o fluxo entre esses componentes. Esses elementos fundamentam o atendimento ao requisito de descrição da arquitetura.
+
+A análise das definições do domínio considera os termos Cliente, Produto, Pedido, ItemPedido e PedidoConcluido, seus sinônimos, a relação entre pedidos, clientes e itens e a fórmula do total do pedido. O catálogo explicita a granularidade por pedido, a unidade monetária e a exclusão de frete, tributos, descontos e devoluções. A correspondência física acompanha as versões original e corrigida do esquema. O atendimento ao requisito de metadados e definições combina esse exame com a validade estrutural do catálogo.
+
+Esses exames são distintos dos testes de funcionamento. Os critérios constam em [requirements.json](requirements.json), e o [registro de análises](analises.json) vincula as conclusões aos hashes dos arquivos examinados. A presença dos arquivos não comprova o atendimento; uma versão alterada requer nova análise. Falhas estruturais do catálogo permanecem visíveis mesmo quando a análise de suas definições está concluída.
+
+O [relatório final](analise-final/relatorio.html) reúne essa análise e os resultados da execução documentada. No cenário sintético, os sete requisitos foram considerados atendidos. A consolidação documental preserva os registros da execução original e não representa uma nova execução das consultas.
+
 ## Limites
 
-A avaliação usa 10 clientes, 10 produtos, 30 pedidos e 60 itens. Os resultados se limitam a esse conjunto de dados e à alteração de esquema prevista no experimento. Os tempos registrados servem ao diagnóstico da execução.
+A avaliação usa 10 clientes, 10 produtos, 30 pedidos e 60 itens. Os resultados se limitam a esse domínio sintético, ao pequeno volume de dados e a uma única alteração de esquema. Não houve avaliação em produção. Os tempos registrados servem ao diagnóstico da execução.
 
-R01 depende da revisão das responsabilidades e interfaces. A conferência dos termos, métricas e relações do catálogo também está pendente. O catálogo cobre as dez questões do roteiro, sem interpretação de perguntas em linguagem natural.
+O catálogo cobre as dez questões do roteiro, sem interpretação de perguntas em linguagem natural.
 
 As credenciais do Compose são públicas e destinadas à demonstração local. O PostgreSQL não publica porta para o host, e a interface do Ontop fica vinculada ao loopback.
